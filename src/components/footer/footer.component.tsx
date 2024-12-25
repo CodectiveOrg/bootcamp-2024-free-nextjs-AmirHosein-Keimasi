@@ -7,15 +7,16 @@ import idkLogo from "@/assets/logo/idk.svg";
 import certificateLogo from "@/assets/logo/certificate.svg";
 import enamadLogo from "@/assets/logo/enamad.svg";
 
-import MingcuteTelegramFill from "@/app/icons/MingcuteTelegramFill";
-import MingcuteLinkedinFill from "@/app/icons/MingcuteLinkedinFill";
-import MingcuteYoutubeFill from "@/app/icons/MingcuteYoutubeFill";
+import MingcuteTelegramFill from "@/icons/MingcuteTelegramFill";
+import MingcuteLinkedinFill from "@/icons/MingcuteLinkedinFill";
+import MingcuteYoutubeFill from "@/icons/MingcuteYoutubeFill";
 
 import styles from "./footer.module.css";
 
 export default function FooterComponent(): ReactElement {
   return (
-    <footer className={styles.footer}>ّ
+    <footer className={styles.footer}>
+      ّ
       <div className={styles.writings}>
         <div className={styles.logo}>دکتر من</div>
         <p className={styles.description}>
