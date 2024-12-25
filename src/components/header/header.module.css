@@ -6,11 +6,11 @@
   padding-block: 1rem;
 
   nav {
-    >ul {
+    > ul {
       display: flex;
       gap: 2rem;
 
-      >li {
+      > li {
         a {
           &.active {
             color: var(--color-primary);

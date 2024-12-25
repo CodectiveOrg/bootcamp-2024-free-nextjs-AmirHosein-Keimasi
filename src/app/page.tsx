@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 
-
 import MyDoctorLogo from "@/logo/my-doctor.logo";
 
 import styles from "./page.module.css";
@@ -13,7 +12,7 @@ export default function Home(): ReactElement {
         <MyDoctorLogo />
         دکتر من
       </h1>
-      <GlobalSearchBoxComponent/>
+      <GlobalSearchBoxComponent />
       <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
