@@ -21,13 +21,13 @@ export default function Error({ error, reset }: Props): ReactElement {
         <h1>یک خطای غیرمنتظره رخ داده است.</h1>
         <p>با عرض پوزش، لطفاً با تیم پشتیبانی تماس بگیرید.</p>
         <div className={styles.actions}>
-        <button onClick={reset}>تلاش مجدد</button>
-      </div>
+          <button onClick={reset}>تلاش مجدد</button>
+        </div>
       </div>
       <div className={styles.visuals}>
-        <Image src={errorImage} alt=""  width={250}  />
+        <Image src={errorImage} alt="" width={250} />
       </div>
-    
+
       <div className={styles.trace}>
         <details>
           <summary>لاگ خطا</summary>

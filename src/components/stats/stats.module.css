@@ -5,9 +5,13 @@
   justify-content: center;
   list-style: none;
 
-  >li {
+  > li {
     .value {
-      background: linear-gradient(to right, var(--color-primary) 1%, var(--color-primary-darker) 100%);
+      background: linear-gradient(
+        to right,
+        var(--color-primary) 1%,
+        var(--color-primary-darker) 100%
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: var(--fz-500);
@@ -15,17 +19,13 @@
       line-height: 1;
     }
 
-
-
     .label {
       font-size: var(--fz-200);
       font-weight: 600;
       line-height: 3;
       justify-content: center;
       display: flex;
-
     }
-
   }
 
   .divider {
