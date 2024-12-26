@@ -14,7 +14,7 @@
     font-size: var(--fz-700);
 
     svg {
-      font-size: 1.5em;
+      font-size: var(--fz-700);
     }
   }
 
@@ -24,14 +24,13 @@
     align-items: center;
     gap: 1rem;
 
-    .title {
-    }
+    .title {}
 
-    > ul {
+    >ul {
       display: flex;
       gap: 1rem;
 
-      > li {
+      >li {
         background-color: var(--color-gray-20);
 
         padding: 0.25rem 0.75rem;
