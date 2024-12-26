@@ -16,7 +16,6 @@ import styles from "./footer.module.css";
 export default function FooterComponent(): ReactElement {
   return (
     <footer className={styles.footer}>
-      ّ
       <div className={styles.writings}>
         <div className={styles.logo}>دکتر من</div>
         <p className={styles.description}>
