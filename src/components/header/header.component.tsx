@@ -5,6 +5,8 @@ import { ReactElement } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import DarkModeToggleComponent from "../dark-mode-toggle/dark-mode-toggle.component";
+
 import clsx from "clsx";
 
 import styles from "./header.module.css";
@@ -33,7 +35,9 @@ export default function HeaderComponent(): ReactElement {
           ))}
         </ul>
       </nav>
+
       <button className={styles.cta}>ورود | ثبت‌نام</button>
+      <DarkModeToggleComponent />
     </header>
   );
 }
