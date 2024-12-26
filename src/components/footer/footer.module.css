@@ -35,7 +35,7 @@
       display: flex;
       gap: 1rem;
 
-      > li {
+      >li {
         a {
           font-size: var(--fz-500);
         }
@@ -47,5 +47,13 @@
     grid-area: copy;
 
     text-align: center;
+
+   
+      span {
+        display: inline-block;
+        font-size: var(--fz-500);
+        margin: 0.25rem;
+        color: var(--color-primary);
+      }
+    }
   }
-}

@@ -1,0 +1,54 @@
+.not-found {
+    display: grid;
+    grid-template-areas:
+        "writings visuals"
+        "search search";
+    place-content: center;
+    gap: 3rem;
+    min-block-size: 100%;
+
+    .writings {
+        grid-area: writings;
+
+        .status-code {
+            font-size: var(--fz-800);
+            font-weight: 300;
+
+            line-height: 0.8;
+        }
+
+        h1 {
+            margin-block-end: 2rem;
+
+            font-size: var(--fz-600);
+        }
+
+        p {
+            max-inline-size: 50ch;
+        }
+        span{
+            font-size: var(--fz-500);
+            margin: 0.25rem;
+            color: var(--color-primary);
+        }
+    }
+
+    .visuals {
+        grid-area: visuals;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            block-size: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+        }
+    }
+
+    .search {
+        grid-area: search;
+
+    }
+}
