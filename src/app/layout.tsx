@@ -6,6 +6,7 @@ import HeaderComponent from "@/components/header/header.component";
 import FooterComponent from "@/components/footer/footer.component";
 
 import "./globals.css";
+import "../styles/typography.css";
 
 const vazirmatn = Vazirmatn({
   subsets: ["latin", "arabic"],
@@ -13,7 +14,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "رزور نوبت",
+  title: "وقت‌ دکتر",
   description: "پلتفرمی یکپارچه برای یافتن پزشک و رزرو آنلاین نوبت ",
 };
 

@@ -1,5 +1,8 @@
 # Appointment Reservation
 
+Explore the [Demo Page](https://appointment-reservation-nextjs.vercel.app/)
+Experience the full functionality of our application in action!
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

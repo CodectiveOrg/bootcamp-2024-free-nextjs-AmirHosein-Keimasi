@@ -16,9 +16,8 @@ import styles from "./footer.module.css";
 export default function FooterComponent(): ReactElement {
   return (
     <footer className={styles.footer}>
-      ّ
       <div className={styles.writings}>
-        <div className={styles.logo}>دکتر من</div>
+        <div className={styles.logo}> وقت‌ دکتر</div>
         <p className={styles.description}>
           تجربه مشاوره آنلاین و دریافت نوبت از بهترین پزشکان و بیمارستان‌های
           ایران
@@ -64,8 +63,10 @@ export default function FooterComponent(): ReactElement {
         </ul>
       </div>
       <p className={styles.copy}>
+        {" "}
         تمامی حقوق مادی و معنوی این وب‌سایت، خدمات و محتوای مربوط به آن متعلق به
-        من می‌باشد!
+        <span>وقت‌ دکتر</span>
+        می‌باشد!
       </p>
     </footer>
   );
