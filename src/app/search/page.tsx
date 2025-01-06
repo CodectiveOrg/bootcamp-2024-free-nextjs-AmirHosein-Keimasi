@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { doctors } from "@/components/db/doctors";
+import { doctors } from "@/db/doctors";
 import Doctorcard from "@/components/doctor-card/doctorcard.component";
 
 import styles from "./page.module.css";

@@ -1,10 +1,14 @@
 import React, { ReactElement } from "react";
-import styles from "./doctorcard.module.css";
-import MingcuteStarFill from "@/icons/MingcuteStarFill";
-import MingcuteThumbUp2Fill from "@/icons/MingcuteThumbUp2Fill";
+
 import { DoctorModel } from "@/models/doctor.model";
-import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
+
 import AppointmentTypes from "./appointment-types/appointment-types.component";
+
+import MingcuteThumbUp2Fill from "@/icons/MingcuteThumbUp2Fill";
+import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
+import MingcuteStarFill from "@/icons/MingcuteStarFill";
+
+import styles from "./doctorcard.module.css";
 
 export default function DoctorCard({
   doctors,

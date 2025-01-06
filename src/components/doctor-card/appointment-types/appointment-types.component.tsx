@@ -5,7 +5,6 @@ import { MingcuteChat3Fill } from "@/icons/MingcuteChat3Fill";
 
 import styles from "./appointment-types.module.css";
 
-// تعریف تایپ برای پراپ‌ها
 interface AppointmentTypesProps {
   appointmentTypes: string[];
 }
