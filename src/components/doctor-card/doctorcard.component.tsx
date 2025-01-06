@@ -4,7 +4,7 @@ import { DoctorModel } from "@/models/doctor.model";
 
 import AppointmentTypes from "./appointment-types/appointment-types.component";
 
-import MingcuteThumbUp2Fill from "@/icons/MingcuteThumbUp2Fill";
+import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
 
@@ -33,16 +33,18 @@ export default function DoctorCard({
               </p>
             </div>
           </div>
-          <div className={styles.ratingContainer}>
-            <MingcuteStarFill className={styles.icon} />
-            <span>
-              امتیاز: {doctor.averageRating} ( {doctor.totalVotes}
-              نظر )
-            </span>
-          </div>
-          <div className={styles.appointmentSection}>
-            <MingcuteThumbUp2Fill className={styles.icon} />
-            <span>وقت آزاد: {doctor.firstAvailableAppointment}</span>
+          <div className={styles.content}>
+            <div className={styles.ratingContainer}>
+              <MingcuteStarFill className={styles.icon} />
+              <span>
+                {doctor.averageRating} ( {doctor.totalVotes}
+                نظر )
+              </span>
+            </div>
+            <div className={styles.appointmentSection}>
+              <MingcuteTimeFill className={styles.icon} />
+              <span> {doctor.firstAvailableAppointment}</span>
+            </div>
           </div>
 
           <div className={styles.appointmentTypes}>

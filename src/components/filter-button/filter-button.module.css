@@ -11,19 +11,14 @@
   transition: 0.2s ease-in-out;
   transition-property: background-color, color;
 
-
   &:hover {
     background-color: var(--color-primary-fade);
     color: var(--color-primary-opposite);
   }
-
-
 
   &.active {
     background-color: var(--color-primary);
     color: var(--color-primary-opposite);
     border-color: var(--color-primary);
   }
-
-
 }
