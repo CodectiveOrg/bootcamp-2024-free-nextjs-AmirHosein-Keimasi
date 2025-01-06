@@ -16,7 +16,6 @@ export const doctors: DoctorModel[] = [
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "زن",
     appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی","مشاوره‌ متنی"],
-    
   },
   {
     id: "e6719f23-e846-4a95-88f9-c013c5d9cb4f",
@@ -190,7 +189,7 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص گوارش اطفال",
     badges: ["خوش برخورد"],
     gender: "مرد",
-    appointmentTypes: [,"مشاوره‌ متنی"],
+    appointmentTypes: ["مشاوره‌ متنی"]
   },
   {
     id: "6b59b263-73fe-4316-ae81-4fe50968a723",
