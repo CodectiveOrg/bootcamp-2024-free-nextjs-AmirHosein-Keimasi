@@ -1,15 +1,11 @@
 "use client";
 import React, { ReactElement, useContext } from "react";
-
-import { DoctorModel } from "@/models/doctor.model";
-
+import { DoctorModel, AppointmentType } from "@/models/doctor.model"; // Import AppointmentType enum
 import AppointmentTypes from "./appointment-types/appointment-types.component";
 import { FiltersContext } from "@/app/search/providers/filtersProviders";
-
 import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
-
 import styles from "./doctorcard.module.css";
 
 type Props = {
@@ -20,12 +16,23 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
   const filteredDoctors = doctors.filter((doctor) => {
-    if (!filters.gender || filters.gender === "AllGender") return true;
-    if (filters.gender === "MaleGender" && doctor.gender === "Male")
-      return true;
-    if (filters.gender === "FemaleGender" && doctor.gender === "Female")
-      return true;
-    return false;
+    if (filters.gender && filters.gender !== "AllGender") {
+      if (
+        (filters.gender === "MaleGender" && doctor.gender !== "Male") ||
+        (filters.gender === "FemaleGender" && doctor.gender !== "Female")
+      ) {
+        return false;
+      }
+    }
+
+    if (filters.appointmentType && filters.appointmentType !== "All") {
+      const appointmentType = filters.appointmentType as AppointmentType;
+      if (!doctor.appointmentTypes.includes(appointmentType)) {
+        return false;
+      }
+    }
+
+    return true;
   });
 
   return (
@@ -50,8 +57,7 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
             <div className={styles.ratingContainer}>
               <MingcuteStarFill className={styles.icon} />
               <span>
-                {doctor.averageRating} ( {doctor.totalVotes}
-                نظر )
+                {doctor.averageRating} ( {doctor.totalVotes} نظر )
               </span>
             </div>
             <div className={styles.appointmentSection}>

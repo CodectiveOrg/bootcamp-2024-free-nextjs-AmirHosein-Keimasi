@@ -1,14 +1,19 @@
+export enum AppointmentType {
+  OfficeAppointment = "نوبت‌دهی مطب",
+  PhoneConsultation = "مشاوره‌ تلفنی",
+  TextConsultation = "مشاوره‌ متنی",
+}
+
 export interface DoctorModel {
   id: string;
   name: string;
   image: string;
-  isVerified: boolean;
+  gender: string;
   averageRating: number;
   totalVotes: number;
-  address: string;
   firstAvailableAppointment: string;
-  brief: string;
+  address: string;
+  appointmentTypes: AppointmentType[];
   badges: string[];
-  gender: string;
-  appointmentTypes: string[];
+  brief: string;
 }
