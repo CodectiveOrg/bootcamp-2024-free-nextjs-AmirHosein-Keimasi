@@ -18,7 +18,7 @@ export default function AppointmentTypes({
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-      {appointmentTypes.includes(AppointmentType.OfficeAppointment) && (
+        {appointmentTypes.includes(AppointmentType.OfficeAppointment) && (
           <li className={styles.item}>
             <MingcuteHospitalFill className={styles.icon} />
             نوبت‌دهی مطب

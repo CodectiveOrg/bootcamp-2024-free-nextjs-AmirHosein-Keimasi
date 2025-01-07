@@ -15,13 +15,14 @@ import styles from "./page.module.css";
 export default function Page(): ReactElement {
   return (
     <FiltersProvider>
-
-        <div className={styles.header}>
-          <MingcuteFilter3Fill />
-          <h3>فیلتر ها</h3>
-        </div>
-        <div className={styles.page}>
-       <div className="">   <GenderComponent
+      <div className={styles.header}>
+        <MingcuteFilter3Fill />
+        <h3>فیلتر ها</h3>
+      </div>
+      <div className={styles.page}>
+        <div className="">
+          {" "}
+          <GenderComponent
             title="جنسیت پزشک"
             Options={[
               { key: "MaleGender", label: "اقا" },
@@ -37,11 +38,10 @@ export default function Page(): ReactElement {
               { key: "textConsultation", label: "مشاوره متنی" },
               { key: "All", label: "همه" },
             ]}
-          /></div>
-        <Doctorcard doctors={doctors} />
-
+          />
         </div>
-
+        <Doctorcard doctors={doctors} />
+      </div>
     </FiltersProvider>
   );
 }
