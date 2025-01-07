@@ -9,7 +9,7 @@ import { FiltersType } from "../types/filter.type";
 
 type ContextValue = {
   filters: FiltersType;
-  chengeFilter: <TKey extends keyof FiltersType>(
+  changeFilter: <TKey extends keyof FiltersType>(
     key: TKey,
     value: FiltersType[TKey],
   ) => void;
@@ -17,23 +17,23 @@ type ContextValue = {
 
 export const FiltersContext = createContext<ContextValue>({
   filters: {},
-  chengeFilter: () => {},
+  changeFilter: () => {},
 });
 
 type Props = PropsWithChildren;
 
 export default function FiltersProvider({ children }: Props): ReactElement {
-  const [filters, setfilter] = useState<FiltersType>({});
+  const [filters, setFilter] = useState<FiltersType>({});
 
-  const chengeFilter = <TKey extends keyof FiltersType>(
+  const changeFilter = <TKey extends keyof FiltersType>(
     key: TKey,
     value: FiltersType[TKey],
   ): void => {
-    setfilter((old) => ({ ...old, [key]: value }));
+    setFilter((old) => ({ ...old, [key]: value }));
   };
 
   return (
-    <FiltersContext.Provider value={{ filters, chengeFilter }}>
+    <FiltersContext.Provider value={{ filters, changeFilter }}>
       {children}
     </FiltersContext.Provider>
   );
