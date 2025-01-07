@@ -49,7 +49,7 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
               <h3 className={styles.name}>{doctor.name}</h3>
               <p className={styles.specialty}>{doctor.brief}</p>
               <p className={styles.gender}>
-                جنسیت: {doctor.gender === "زن" ? "خانم" : "آقا"}
+                جنسیت: {doctor.gender === "Female" ? "خانم" : "اقا"}
               </p>
             </div>
           </div>
