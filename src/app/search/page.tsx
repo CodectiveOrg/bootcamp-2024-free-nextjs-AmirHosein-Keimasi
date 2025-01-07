@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import { doctors } from "@/db/doctors";
 
-import FilterComponent from "./components/filter/filter.component";
+import GenderComponent from "./components/Gender/gender.component";
 import Doctorcard from "@/components/doctor-card/doctorcard.component";
 import FiltersProvider from "./providers/filtersProviders";
 
@@ -19,7 +19,7 @@ export default function Page(): ReactElement {
           <h3>فیلتر ها</h3>
         </div>
         <div className={styles.page}>
-          <FilterComponent
+          <GenderComponent
             title="جنسیت پزشک"
             Options={[
               { key: "MaleGender", label: "اقا" },

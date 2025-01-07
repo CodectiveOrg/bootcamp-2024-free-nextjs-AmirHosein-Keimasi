@@ -5,7 +5,7 @@ import CardComponent from "@/components/card-component/card-component.component"
 import FilterButtonComponent from "@/components/filter-button/filter-button.component";
 import { FiltersContext } from "../../providers/filtersProviders";
 
-import styles from "./filter.module.css";
+import styles from "./gender.module.css";
 
 type Option = {
   key: "MaleGender" | "FemaleGender" | "AllGender";
@@ -17,7 +17,7 @@ type Props = {
   Options: Option[];
 };
 
-export default function FilterComponent({
+export default function GenderComponent({
   title,
   Options,
 }: Props): ReactElement {
