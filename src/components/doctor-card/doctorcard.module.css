@@ -120,7 +120,7 @@
     padding: 0.5rem 1rem;
 
     .badge {
-      background-color: var(--color-primary-fade);
+      background-color: var(--color-gray-20);
       color: var(--color-primary-darker);
       font-size: 0.8rem;
       padding: 0.25rem 0.5rem;

@@ -4,12 +4,11 @@ import React, { ReactElement, useContext } from "react";
 import CardComponent from "@/components/card-component/card-component.component";
 import FilterButtonComponent from "@/components/filter-button/filter-button.component";
 import { FiltersContext } from "../../providers/filtersProviders";
-import { FiltersType } from "../../types/filter.type";
 
 import styles from "./filter.module.css";
 
 type Option = {
-  key: keyof FiltersType;
+  key: "MaleGender" | "FemaleGender" | "AllGender";
   label: string;
 };
 
@@ -31,8 +30,8 @@ export default function FilterComponent({
         {Options.map((Option) => (
           <FilterButtonComponent
             key={Option.key}
-            isActive={!!filters[Option.key]}
-            onClick={() => changeFilter(Option.key, !filters[Option.key])}
+            isActive={filters.gender === Option.key}
+            onClick={() => changeFilter("gender", Option.key)}
           >
             {Option.label}
           </FilterButtonComponent>

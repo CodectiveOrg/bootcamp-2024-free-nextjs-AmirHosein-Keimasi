@@ -23,7 +23,7 @@ export const FiltersContext = createContext<ContextValue>({
 type Props = PropsWithChildren;
 
 export default function FiltersProvider({ children }: Props): ReactElement {
-  const [filters, setFilter] = useState<FiltersType>({});
+  const [filters, setFilter] = useState<FiltersType>({ gender: "AllGender" });
 
   const changeFilter = <TKey extends keyof FiltersType>(
     key: TKey,

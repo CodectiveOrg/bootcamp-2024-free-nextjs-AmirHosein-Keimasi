@@ -1,8 +1,10 @@
-import React, { ReactElement } from "react";
+"use client";
+import React, { ReactElement, useContext } from "react";
 
 import { DoctorModel } from "@/models/doctor.model";
 
 import AppointmentTypes from "./appointment-types/appointment-types.component";
+import { FiltersContext } from "@/app/search/providers/filtersProviders";
 
 import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
@@ -10,14 +12,25 @@ import MingcuteStarFill from "@/icons/MingcuteStarFill";
 
 import styles from "./doctorcard.module.css";
 
-export default function DoctorCard({
-  doctors,
-}: {
+type Props = {
   doctors: DoctorModel[];
-}): ReactElement {
+};
+
+export default function DoctorCard({ doctors }: Props): ReactElement {
+  const { filters } = useContext(FiltersContext);
+
+  const filteredDoctors = doctors.filter((doctor) => {
+    if (!filters.gender || filters.gender === "AllGender") return true;
+    if (filters.gender === "MaleGender" && doctor.gender === "Male")
+      return true;
+    if (filters.gender === "FemaleGender" && doctor.gender === "Female")
+      return true;
+    return false;
+  });
+
   return (
     <div className={styles.cardContainer}>
-      {doctors.map((doctor) => (
+      {filteredDoctors.map((doctor) => (
         <div key={doctor.id} className={styles.card}>
           <div className={styles.header}>
             <img
