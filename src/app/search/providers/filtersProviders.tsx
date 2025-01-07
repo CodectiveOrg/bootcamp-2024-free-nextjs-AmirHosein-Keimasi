@@ -16,7 +16,11 @@ type ContextValue = {
 };
 
 export const FiltersContext = createContext<ContextValue>({
-  filters: {},
+  filters: {
+    gender: "AllGender",
+    appointmentType: "All",
+    dateFilter: "All",
+  },
   changeFilter: () => {},
 });
 
@@ -26,6 +30,7 @@ export default function FiltersProvider({ children }: Props): ReactElement {
   const [filters, setFilter] = useState<FiltersType>({
     gender: "AllGender",
     appointmentType: "All",
+    dateFilter: "All",
   });
 
   const changeFilter = <TKey extends keyof FiltersType>(
