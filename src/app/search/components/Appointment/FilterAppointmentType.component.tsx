@@ -3,16 +3,14 @@ import React, { ReactElement, useContext } from "react";
 
 import CardComponent from "@/components/card-component/card-component.component";
 import FilterButtonComponent from "@/components/filter-button/filter-button.component";
+
 import { FiltersContext } from "../../providers/filtersProviders";
+import { AppointmentType } from "@/models/doctor.model";
 
 import styles from "./FilterAppointmentType.module.css";
 
 type Option = {
-  key:
-    | "officeAppointment"
-    | "TelephoneConsultation"
-    | "textConsultation"
-    | "All";
+  key: AppointmentType | "All";
   label: string;
 };
 

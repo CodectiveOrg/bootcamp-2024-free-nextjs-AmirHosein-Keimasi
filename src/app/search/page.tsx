@@ -6,7 +6,9 @@ import Doctorcard from "@/components/doctor-card/doctorcard.component";
 
 import FiltersProvider from "./providers/filtersProviders";
 import GenderComponent from "./components/Gender/gender.component";
+
 import FilterAppointmentType from "./components/Appointment/FilterAppointmentType.component";
+import { AppointmentType } from "@/models/doctor.model";
 
 import MingcuteFilter3Fill from "@/icons/MingcuteFilter3Fill";
 
@@ -33,9 +35,9 @@ export default function Page(): ReactElement {
           <FilterAppointmentType
             title="نوع نوبت‌دهی"
             Options={[
-              { key: "officeAppointment", label: "نوبت‌دهی مطب" },
-              { key: "TelephoneConsultation", label: "مشاوره تلفنی" },
-              { key: "textConsultation", label: "مشاوره متنی" },
+              { key: AppointmentType.OfficeAppointment, label: "نوبت‌دهی مطب" },
+              { key: AppointmentType.PhoneConsultation, label: "مشاوره تلفنی" },
+              { key: AppointmentType.TextConsultation, label: "مشاوره متنی" },
               { key: "All", label: "همه" },
             ]}
           />

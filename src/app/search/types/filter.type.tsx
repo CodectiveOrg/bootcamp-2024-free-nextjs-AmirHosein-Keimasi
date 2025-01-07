@@ -1,8 +1,6 @@
+import { AppointmentType } from "@/models/doctor.model";
+
 export type FiltersType = {
   gender?: "MaleGender" | "FemaleGender" | "AllGender";
-  appointmentType?:
-    | "officeAppointment"
-    | "TelephoneConsultation"
-    | "textConsultation"
-    | "All";
+  appointmentType?: AppointmentType | "All";
 };
