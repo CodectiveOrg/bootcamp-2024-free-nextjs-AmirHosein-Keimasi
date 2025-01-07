@@ -1,4 +1,4 @@
-import { DoctorModel } from "@/models/doctor.model";
+import {  DoctorModel, AppointmentType } from "@/models/doctor.model";
 
 export const doctors: DoctorModel[] = [
   {
@@ -15,8 +15,11 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص گفتاردرمانی ، گفتار درمانی کودکان",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Female",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
-  },
+    appointmentTypes: [
+      AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation
+    ],  },
   {
     id: "e6719f23-e846-4a95-88f9-c013c5d9cb4f",
     name: "مجتبی قدسی",
@@ -31,7 +34,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص بیماری‌های کودکان",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ متنی"],
+    appointmentTypes: [  AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, ],
   },
   {
     id: "4a7403d4-e0a2-406c-8dea-3e557bae54d2",
@@ -46,7 +50,7 @@ export const doctors: DoctorModel[] = [
     brief: "جراحی عمومی،جراحی پلاستیک و زیبایی،درمان هموروئید و فیشر و...",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Male",
-    appointmentTypes: ["مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.TextConsultation],
   },
   {
     id: "06d3a495-160d-4722-815e-286ff5d82ed2",
@@ -61,7 +65,8 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص طب نوزادی و پیرامون تولد",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59", "خوش برخورد"],
     gender: "Female",
-    appointmentTypes: ["نوبت‌دهی مطب"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+    ],
   },
   {
     id: "7f39ff5b-4c81-4c59-80fa-7872b675bb18",
@@ -81,7 +86,9 @@ export const doctors: DoctorModel[] = [
       "کمترین معطلی",
     ],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "1515",
@@ -95,7 +102,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص اطفال",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 18 دی 23:59", "کمترین معطلی"],
     gender: "Female",
-    appointmentTypes: ["نوبت‌دهی مطب"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+    ],
   },
   {
     id: "ba7333ef-9e18-11ea-9877-005056b09c11",
@@ -110,7 +118,8 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص بیماری‌های قلب کودکان",
     badges: ["خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "a8a27637-9e67-11ea-9877-005056b09c11",
@@ -126,7 +135,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص چشم پزشکی دارای بورد تخصصی",
     badges: ["خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [
+      AppointmentType.TextConsultation],
   },
   {
     id: "286439d9-617a-4d5c-a77a-e1ac0c088780",
@@ -141,7 +151,9 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص طب نوزادی و پیرامون تولد متخصص کودکان",
     badges: ["خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "601e14cb-c7f7-4668-b883-3c61ebd11f52",
@@ -157,7 +169,8 @@ export const doctors: DoctorModel[] = [
     brief: "کارشناسی علوم تغذیه",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+    ],
   },
   {
     id: "4009802",
@@ -173,7 +186,8 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص گوارش اطفال",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 15 دی 06:00", "خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "85882eb5-1d70-4453-9f67-2a232527590c",
@@ -189,7 +203,7 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص گوارش اطفال",
     badges: ["خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.TextConsultation],
   },
   {
     id: "6b59b263-73fe-4316-ae81-4fe50968a723",
@@ -204,7 +218,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص بیماری‌های قلب و عروق",
     badges: ["خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "1eb139dc-42d2-4110-8a09-f04a2561372c",
@@ -220,7 +235,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص زنان و زایمان",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Female",
-    appointmentTypes: ["مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+    ],
   },
   {
     id: "7572",
@@ -236,7 +252,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص بیماریهای عفونی و گرمسیری",
     badges: [],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+    ],
   },
   {
     id: "4917678e-5e19-4322-b9e4-eb73e8ec622c",
@@ -252,7 +269,7 @@ export const doctors: DoctorModel[] = [
     brief: "فوق تخصص طب نوزادی و پیرامون تولد",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 13 دی 23:59", "خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.TextConsultation],
   },
   {
     id: "22409",
@@ -268,7 +285,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص بیماریهای قلب و عروق",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 15 دی 08:00", "خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["مشاوره‌ متنی", "مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+    ],
   },
   {
     id: "2488",
@@ -284,7 +302,9 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص چشم پزشکی",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 9 اسفند 00:01"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, 
+      AppointmentType.TextConsultation],
   },
   {
     id: "1855",
@@ -300,7 +320,8 @@ export const doctors: DoctorModel[] = [
     brief: "متخصص قلب و عروق",
     badges: ["کمترین معطلی"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.OfficeAppointment, 
+      AppointmentType.PhoneConsultation, ],
   },
   {
     id: "c1d1fa23-ec60-11ec-b214-005056ad7555",
@@ -315,6 +336,7 @@ export const doctors: DoctorModel[] = [
     brief: "فلوشیپ ارولوژی اطفال",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59", "خوش برخورد"],
     gender: "Male",
-    appointmentTypes: ["نوبت‌دهی مطب", "مشاوره‌ تلفنی", "مشاوره‌ متنی"],
+    appointmentTypes: [AppointmentType.PhoneConsultation, 
+    ],
   },
 ];

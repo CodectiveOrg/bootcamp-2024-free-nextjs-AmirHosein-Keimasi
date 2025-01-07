@@ -9,6 +9,7 @@ export interface DoctorModel {
   name: string;
   image: string;
   gender: string;
+  isVerified: boolean;
   averageRating: number;
   totalVotes: number;
   firstAvailableAppointment: string;
