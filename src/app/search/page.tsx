@@ -19,9 +19,9 @@ export default function Page(): ReactElement {
         <FilterComponent
           title="جنسیت پزشک"
           Options={[
-            { value: "Man", label: "اقا" },
-            { value: "Woman", label: "خانم" },
-            { value: "ManAndWoman", label: " اقا و خانم" },
+            { value: "Male", label: "اقا" },
+            { value: "Female", label: "خانم" },
+            { value: "MaleAndFemale", label: " اقا و خانم" },
           ]}
         />
 
