@@ -44,7 +44,7 @@ export default function Page(): ReactElement {
           />
           <FilterDateComponent
             title="اولین نوبت موجود"
-            Options={[
+            options={[
               { key: "today", label: "امروز" },
               { key: "tomorrow", label: "فردا" },
               { key: "next-7-days", label: "7 روز آینده" },

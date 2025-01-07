@@ -16,7 +16,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
   const filteredDoctors = doctors.filter((doctor) => {
-    // Gender filter
     if (filters.gender && filters.gender !== "AllGender") {
       if (
         (filters.gender === "MaleGender" && doctor.gender !== "Male") ||
@@ -26,7 +25,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
       }
     }
 
-    // Appointment type filter
     if (filters.appointmentType && filters.appointmentType !== "All") {
       const appointmentType = filters.appointmentType as AppointmentType;
       if (!doctor.appointmentTypes.includes(appointmentType)) {
@@ -34,7 +32,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
       }
     }
 
-    // Date filter
     if (filters.dateFilter && filters.dateFilter !== "All") {
       const today = new Date();
       const appointmentDate = new Date(doctor.firstAvailableAppointment);

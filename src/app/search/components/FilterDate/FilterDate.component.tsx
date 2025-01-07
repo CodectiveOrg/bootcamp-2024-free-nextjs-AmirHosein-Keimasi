@@ -1,8 +1,9 @@
 "use client";
 import React, { ReactElement, useContext } from "react";
 import { FiltersContext } from "../../providers/filtersProviders";
+
 import CardComponent from "@/components/card-component/card-component.component";
-import FilterButtonComponent from "@/components/filter-button/filter-button.component";
+import DropdownButtonComponent from "@/components/dropdown-button/dropdown-button.component";
 
 import styles from "./FilterDate.module.css";
 
@@ -13,29 +14,28 @@ type Option = {
 
 type Props = {
   title: string;
-  Options: Option[];
+  options: Option[];
 };
 
 export default function FilterDateComponent({
   title,
-  Options,
+  options,
 }: Props): ReactElement {
   const { changeFilter, filters } = useContext(FiltersContext);
+
+  const handleSelect = (key: string) => {
+    changeFilter("dateFilter", key);
+  };
 
   return (
     <CardComponent>
       <div className={styles.title}>{title}</div>
-      <div className={styles.buttons}>
-        {Options.map((Option) => (
-          <FilterButtonComponent
-            key={Option.key}
-            isActive={filters.dateFilter === Option.key}
-            onClick={() => changeFilter("dateFilter", Option.key)}
-          >
-            {Option.label}
-          </FilterButtonComponent>
-        ))}
-      </div>
+      <DropdownButtonComponent
+        options={options}
+        selectedKey={filters.dateFilter}
+        onSelect={handleSelect}
+        defaultLabel="همه"
+      />
     </CardComponent>
   );
 }
