@@ -12,7 +12,7 @@ export interface DoctorModel {
   isVerified: boolean;
   averageRating: number;
   totalVotes: number;
-  firstAvailableAppointment: string;
+  firstAvailableAppointment: Date;
   address: string;
   appointmentTypes: AppointmentType[];
   badges: string[];

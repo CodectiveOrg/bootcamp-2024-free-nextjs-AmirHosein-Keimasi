@@ -16,6 +16,7 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
   const filteredDoctors = doctors.filter((doctor) => {
+    // Gender filter
     if (filters.gender && filters.gender !== "AllGender") {
       if (
         (filters.gender === "MaleGender" && doctor.gender !== "Male") ||
@@ -25,10 +26,32 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
       }
     }
 
+    // Appointment type filter
     if (filters.appointmentType && filters.appointmentType !== "All") {
       const appointmentType = filters.appointmentType as AppointmentType;
       if (!doctor.appointmentTypes.includes(appointmentType)) {
         return false;
+      }
+    }
+
+    // Date filter
+    if (filters.dateFilter && filters.dateFilter !== "All") {
+      const today = new Date();
+      const appointmentDate = new Date(doctor.firstAvailableAppointment);
+
+      switch (filters.dateFilter) {
+        case "today":
+          return appointmentDate.toDateString() === today.toDateString();
+        case "tomorrow":
+          const tomorrow = new Date(today);
+          tomorrow.setDate(today.getDate() + 1);
+          return appointmentDate.toDateString() === tomorrow.toDateString();
+        case "next-7-days":
+          const next7Days = new Date(today);
+          next7Days.setDate(today.getDate() + 7);
+          return appointmentDate <= next7Days;
+        default:
+          return true;
       }
     }
 
@@ -49,7 +72,7 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
               <h3 className={styles.name}>{doctor.name}</h3>
               <p className={styles.specialty}>{doctor.brief}</p>
               <p className={styles.gender}>
-                جنسیت: {doctor.gender === "Female" ? "خانم" : "اقا"}
+                جنسیت: {doctor.gender === "Female" ? "خانم" : "آقا"}
               </p>
             </div>
           </div>
@@ -62,7 +85,19 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
             </div>
             <div className={styles.appointmentSection}>
               <MingcuteTimeFill className={styles.icon} />
-              <span> {doctor.firstAvailableAppointment}</span>
+              <span>
+                {new Date(doctor.firstAvailableAppointment).toLocaleDateString(
+                  "fa-IR",
+                  {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  },
+                )}
+              </span>
             </div>
           </div>
 
