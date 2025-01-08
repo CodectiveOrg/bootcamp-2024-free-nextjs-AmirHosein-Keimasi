@@ -14,7 +14,7 @@ type Option = {
 
 type Props = {
   title: string;
-  options: Option[];
+  options: Option[]; 
 };
 
 export default function FilterDateComponent({
