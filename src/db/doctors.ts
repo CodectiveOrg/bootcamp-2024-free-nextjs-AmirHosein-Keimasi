@@ -1,99 +1,7 @@
 import { DoctorModel, AppointmentType } from "@/models/doctor.model";
 
 export const doctors: DoctorModel[] = [
-  {
-    id: "97420f0d-b576-4f65-9ffc-a81b4b1b4e77",
-    name: "پوراندخت جعفری",
-    image:
-      "/getImage/p24/search-men/155442212a4f2d04e5514bf6f61fd686.jpg?size=150",
-    isVerified: true,
-    averageRating: 4.99,
-    totalVotes: 294,
-    address:
-      "خرم آباد,خرم آباد، بین چهارراه بانک و میدان شهدا،ساختمان پزشکان مانا طبقه چهارم",
-    firstAvailableAppointment: new Date("2025-01-08T10:00:00Z"),
-    brief: "متخصص گفتاردرمانی ، گفتار درمانی کودکان",
-    badges: ["خوش برخورد", "کمترین معطلی"],
-    gender: "Female",
-    appointmentTypes: [
-      AppointmentType.OfficeAppointment,
-      AppointmentType.PhoneConsultation,
-      AppointmentType.TextConsultation,
-    ],
-  },
-  {
-    id: "e6719f23-e846-4a95-88f9-c013c5d9cb4f",
-    name: "مجتبی قدسی",
-    image:
-      "/getImage/p24/search-men/75fb4a009a8ab4af3a5c4f819f1846c7.jpg?size=150",
-    isVerified: true,
-    averageRating: 4.92,
-    totalVotes: 1487,
-    address:
-      "اردبیل,اردبیل، اول خیابان والی، خیابان شهیدان نوعی اقدم، نرسیده به بیمارستان امام خمینی، جنب داروخانه دکترنصیرپور",
-    firstAvailableAppointment: new Date("2025-01-08T09:00:00Z"),
-    brief: "متخصص بیماری‌های کودکان",
-    badges: ["خوش برخورد", "کمترین معطلی"],
-    gender: "Male",
-    appointmentTypes: [
-      AppointmentType.OfficeAppointment,
-      AppointmentType.PhoneConsultation,
-    ],
-  },
-  {
-    id: "4a7403d4-e0a2-406c-8dea-3e557bae54d2",
-    name: "امیرحسین پورداود",
-    image:
-      "/getImage/p24/search-men/98c386aa9c77f7792a4b777137b9fc55.jpg?size=150",
-    isVerified: true,
-    averageRating: 5,
-    totalVotes: 190,
-    address: "جهرم,خیابان ۲۲ بهمن ،جنب بانک مسکن ،ساختمان حکیم ،طبقه سوم",
-    firstAvailableAppointment: new Date("2025-01-10T16:00:00Z"),
-    brief: "جراحی عمومی،جراحی پلاستیک و زیبایی،درمان هموروئید و فیشر و...",
-    badges: ["خوش برخورد", "کمترین معطلی"],
-    gender: "Male",
-    appointmentTypes: [AppointmentType.TextConsultation],
-  },
-  {
-    id: "06d3a495-160d-4722-815e-286ff5d82ed2",
-    name: "اعظم قهساره اردستانی",
-    image: "/getImage/p24/search-women/noimage.png?size=150",
-    isVerified: true,
-    averageRating: 4.95,
-    totalVotes: 759,
-    address:
-      "اصفهان,شهرک ولی عصر .بیمارستان فوق تخصصی میلاد کلینیک  اطفال ونوزادان",
-    firstAvailableAppointment: new Date("2025-01-13T17:00:00Z"),
-    brief: "فوق تخصص طب نوزادی و پیرامون تولد",
-    badges: ["فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59", "خوش برخورد"],
-    gender: "Female",
-    appointmentTypes: [AppointmentType.PhoneConsultation],
-  },
-  {
-    id: "7f39ff5b-4c81-4c59-80fa-7872b675bb18",
-    name: "رضا پورعلی",
-    image:
-      "/getImage/p24/search-men/d7ec05f5b918e11df6a65e65616140a6.jpg?size=150",
-    isVerified: true,
-    averageRating: 4.8259,
-    totalVotes: 305,
-    address:
-      "کلینیک خیام بیمارستان تخصصی و فوق تخصصی حکیم|نیشابور,میدان بسیج، ابتدای جاده باغرود، مرکز اموزشی پژوهشی و درمانی حکیم (درمانگاه طب سنتی ; آدرس: کلینیک امام علی : بلوار جمهوری - بین جمهوری 6و 8)",
-    firstAvailableAppointment: new Date("2025-01-15T17:00:00Z"),
-    brief: "متخصص ارتوپدی",
-    badges: [
-      "فعال شدن نوبت‌دهی اینترنتی 13 دی 08:00",
-      "خوش برخورد",
-      "کمترین معطلی",
-    ],
-    gender: "Male",
-    appointmentTypes: [
-      AppointmentType.OfficeAppointment,
-      AppointmentType.PhoneConsultation,
-      AppointmentType.TextConsultation,
-    ],
-  },
+
   {
     id: "1515",
     name: "نادیا پرور",
@@ -347,5 +255,97 @@ export const doctors: DoctorModel[] = [
     badges: ["فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59", "خوش برخورد"],
     gender: "Male",
     appointmentTypes: [AppointmentType.PhoneConsultation],
+  },  {
+    id: "97420f0d-b576-4f65-9ffc-a81b4b1b4e77",
+    name: "پوراندخت جعفری",
+    image:
+      "/getImage/p24/search-men/155442212a4f2d04e5514bf6f61fd686.jpg?size=150",
+    isVerified: true,
+    averageRating: 4.99,
+    totalVotes: 294,
+    address:
+      "خرم آباد,خرم آباد، بین چهارراه بانک و میدان شهدا،ساختمان پزشکان مانا طبقه چهارم",
+    firstAvailableAppointment: new Date("2025-01-08T10:00:00Z"),
+    brief: "متخصص گفتاردرمانی ، گفتار درمانی کودکان",
+    badges: ["خوش برخورد", "کمترین معطلی"],
+    gender: "Female",
+    appointmentTypes: [
+      AppointmentType.OfficeAppointment,
+      AppointmentType.PhoneConsultation,
+      AppointmentType.TextConsultation,
+    ],
+  },
+  {
+    id: "e6719f23-e846-4a95-88f9-c013c5d9cb4f",
+    name: "مجتبی قدسی",
+    image:
+      "/getImage/p24/search-men/75fb4a009a8ab4af3a5c4f819f1846c7.jpg?size=150",
+    isVerified: true,
+    averageRating: 4.92,
+    totalVotes: 1487,
+    address:
+      "اردبیل,اردبیل، اول خیابان والی، خیابان شهیدان نوعی اقدم، نرسیده به بیمارستان امام خمینی، جنب داروخانه دکترنصیرپور",
+    firstAvailableAppointment: new Date("2025-01-08T09:00:00Z"),
+    brief: "متخصص بیماری‌های کودکان",
+    badges: ["خوش برخورد", "کمترین معطلی"],
+    gender: "Male",
+    appointmentTypes: [
+      AppointmentType.OfficeAppointment,
+      AppointmentType.PhoneConsultation,
+    ],
+  },
+  {
+    id: "4a7403d4-e0a2-406c-8dea-3e557bae54d2",
+    name: "امیرحسین پورداود",
+    image:
+      "/getImage/p24/search-men/98c386aa9c77f7792a4b777137b9fc55.jpg?size=150",
+    isVerified: true,
+    averageRating: 5,
+    totalVotes: 190,
+    address: "جهرم,خیابان ۲۲ بهمن ،جنب بانک مسکن ،ساختمان حکیم ،طبقه سوم",
+    firstAvailableAppointment: new Date("2025-01-10T16:00:00Z"),
+    brief: "جراحی عمومی،جراحی پلاستیک و زیبایی،درمان هموروئید و فیشر و...",
+    badges: ["خوش برخورد", "کمترین معطلی"],
+    gender: "Male",
+    appointmentTypes: [AppointmentType.TextConsultation],
+  },
+  {
+    id: "06d3a495-160d-4722-815e-286ff5d82ed2",
+    name: "اعظم قهساره اردستانی",
+    image: "/getImage/p24/search-women/noimage.png?size=150",
+    isVerified: true,
+    averageRating: 4.95,
+    totalVotes: 759,
+    address:
+      "اصفهان,شهرک ولی عصر .بیمارستان فوق تخصصی میلاد کلینیک  اطفال ونوزادان",
+    firstAvailableAppointment: new Date("2025-01-13T17:00:00Z"),
+    brief: "فوق تخصص طب نوزادی و پیرامون تولد",
+    badges: ["فعال شدن نوبت‌دهی اینترنتی 12 دی 23:59", "خوش برخورد"],
+    gender: "Female",
+    appointmentTypes: [AppointmentType.PhoneConsultation],
+  },
+  {
+    id: "7f39ff5b-4c81-4c59-80fa-7872b675bb18",
+    name: "رضا پورعلی",
+    image:
+      "/getImage/p24/search-men/d7ec05f5b918e11df6a65e65616140a6.jpg?size=150",
+    isVerified: true,
+    averageRating: 4.8259,
+    totalVotes: 305,
+    address:
+      "کلینیک خیام بیمارستان تخصصی و فوق تخصصی حکیم|نیشابور,میدان بسیج، ابتدای جاده باغرود، مرکز اموزشی پژوهشی و درمانی حکیم (درمانگاه طب سنتی ; آدرس: کلینیک امام علی : بلوار جمهوری - بین جمهوری 6و 8)",
+    firstAvailableAppointment: new Date("2025-01-15T17:00:00Z"),
+    brief: "متخصص ارتوپدی",
+    badges: [
+      "فعال شدن نوبت‌دهی اینترنتی 13 دی 08:00",
+      "خوش برخورد",
+      "کمترین معطلی",
+    ],
+    gender: "Male",
+    appointmentTypes: [
+      AppointmentType.OfficeAppointment,
+      AppointmentType.PhoneConsultation,
+      AppointmentType.TextConsultation,
+    ],
   },
 ];
