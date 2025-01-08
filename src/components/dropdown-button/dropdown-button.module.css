@@ -18,6 +18,19 @@
   place-content: center;
   width: 100%;
 
+  .buttonLabel {
+    flex: 1;
+    text-align: center;
+  }
+
+  .arrowIcon {
+    margin-inline-start: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .arrowOpen {
+    transform: rotate(180deg);
+  }
 
   &:hover {
     background-color: var(--color-primary-fade);
@@ -43,7 +56,6 @@
   left: 0;
   right: 0;
   background-color: transparent;
-  border: 1px solid currentColor;
   border-radius: var(--border-radius);
   z-index: 10;
   overflow: hidden;
@@ -55,6 +67,7 @@
   text-align: right;
   cursor: pointer;
   width: 100%;
+  border-top: 1px solid var(--color-primary-fade);
 
   &:hover {
     background-color: var(--color-primary-fade);

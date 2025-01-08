@@ -1,7 +1,8 @@
 "use client";
 import React, { ReactElement, useState } from "react";
-
 import clsx from "clsx";
+
+import { MingcuteArrowDownFill } from "@/icons/MingcuteArrowDownFill";
 
 import styles from "./dropdown-button.module.css";
 
@@ -37,9 +38,13 @@ export default function DropdownButtonComponent({
         )}
         onClick={toggleDropdown}
       >
-        {" "}
-        {options.find((option) => option.key === selectedKey)?.label ||
-          defaultLabel}
+        <span className={styles.buttonLabel}>
+          {options.find((option) => option.key === selectedKey)?.label ||
+            defaultLabel}
+        </span>
+        <MingcuteArrowDownFill
+          className={clsx(styles.arrowIcon, isOpen && styles.arrowOpen)}
+        />
       </button>
       {isOpen && (
         <div className={styles.dropdownList}>
