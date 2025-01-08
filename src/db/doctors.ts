@@ -1,7 +1,6 @@
 import { DoctorModel, AppointmentType } from "@/models/doctor.model";
 
 export const doctors: DoctorModel[] = [
-
   {
     id: "1515",
     name: "نادیا پرور",
@@ -255,7 +254,8 @@ export const doctors: DoctorModel[] = [
     badges: ["فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59", "خوش برخورد"],
     gender: "Male",
     appointmentTypes: [AppointmentType.PhoneConsultation],
-  },  {
+  },
+  {
     id: "97420f0d-b576-4f65-9ffc-a81b4b1b4e77",
     name: "پوراندخت جعفری",
     image:
