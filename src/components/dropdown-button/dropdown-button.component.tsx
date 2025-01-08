@@ -6,24 +6,26 @@ import { MingcuteArrowDownFill } from "@/icons/MingcuteArrowDownFill";
 
 import styles from "./dropdown-button.module.css";
 
-type Option = {
-  key: string;
+type Option<T> = {
+  key: T;
   label: string;
 };
-type DropdownProps = {
-  options: Option[];
-  selectedKey: string;
-  onSelect: (key: string) => void;
+
+type DropdownProps<T> = {
+  options: Option<T>[];
+  selectedKey: T;
+  onSelect: (key: T) => void;
   defaultLabel: string;
   className?: string;
 };
-export default function DropdownButtonComponent({
+
+export default function DropdownButtonComponent<T>({
   options,
   selectedKey,
   onSelect,
   defaultLabel,
   className,
-}: DropdownProps): ReactElement {
+}: DropdownProps<T>): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -50,7 +52,7 @@ export default function DropdownButtonComponent({
         <div className={styles.dropdownList}>
           {options.map((option) => (
             <button
-              key={option.key}
+              key={String(option.key)}
               className={styles.dropdownItem}
               onClick={() => {
                 onSelect(option.key);

@@ -23,7 +23,7 @@ export default function FilterDateComponent({
 }: Props): ReactElement {
   const { changeFilter, filters } = useContext(FiltersContext);
 
-  const handleSelect = (key: string) => {
+  const handleSelect = (key: Option["key"]) => {
     changeFilter("dateFilter", key);
   };
 

@@ -31,8 +31,8 @@ export default function FilterAppointmentType({
       <div className={styles.title}>{title}</div>
       <DropdownButtonComponent
         options={Options}
-        onSelect={(key) => changeFilter("appointmentType", key)}
         selectedKey={filters.appointmentType ?? "All"}
+        onSelect={(key) => changeFilter("appointmentType", key)}
         defaultLabel="انتخاب نوع نوبت‌دهی"
         className={clsx(styles.dropdown)}
       />
