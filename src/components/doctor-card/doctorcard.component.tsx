@@ -1,13 +1,16 @@
 "use client";
 import React, { ReactElement, useContext } from "react";
-import { DoctorModel, AppointmentType } from "@/models/doctor.model"; // Import AppointmentType enum
+
+import { DoctorModel, AppointmentType } from "@/models/doctor.model";
 import AppointmentTypes from "./appointment-types/appointment-types.component";
 import { FiltersContext } from "@/app/search/providers/filtersProviders";
+
 import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
-import styles from "./doctorcard.module.css";
 import MingcuteArrowLeftFill from "@/icons/MingcuteArrowLeftFill";
+
+import styles from "./doctorcard.module.css";
 
 type Props = {
   doctors: DoctorModel[];
