@@ -1,8 +1,9 @@
 "use client";
 import React, { ReactElement, useContext } from "react";
+import clsx from "clsx";
 
 import CardComponent from "@/components/card-component/card-component.component";
-import FilterButtonComponent from "@/components/filter-button/filter-button.component";
+import DropdownButtonComponent from "@/components/dropdown-button/dropdown-button.component";
 
 import { FiltersContext } from "../../providers/filtersProviders";
 import { AppointmentType } from "@/models/doctor.model";
@@ -28,17 +29,13 @@ export default function FilterAppointmentType({
   return (
     <CardComponent>
       <div className={styles.title}>{title}</div>
-      <div className={styles.buttons}>
-        {Options.map((Option) => (
-          <FilterButtonComponent
-            key={Option.key}
-            isActive={filters.appointmentType === Option.key}
-            onClick={() => changeFilter("appointmentType", Option.key)}
-          >
-            {Option.label}
-          </FilterButtonComponent>
-        ))}
-      </div>
+      <DropdownButtonComponent
+        options={Options}
+        selectedKey={filters.appointmentType}
+        onSelect={(key) => changeFilter("appointmentType", key)}
+        defaultLabel="انتخاب نوع نوبت‌دهی"
+        className={clsx(styles.dropdown)}
+      />
     </CardComponent>
   );
 }

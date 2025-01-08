@@ -34,14 +34,6 @@ export default function Page(): ReactElement {
               { key: "All", label: "همه" },
             ]}
           />
-          <GenderComponent
-            title="جنسیت پزشک"
-            Options={[
-              { key: "MaleGender", label: "اقا" },
-              { key: "FemaleGender", label: "خانم" },
-              { key: "AllGender", label: " اقا و خانم" },
-            ]}
-          />
           <FilterAppointmentType
             title="نوع نوبت‌دهی"
             Options={[
@@ -49,6 +41,14 @@ export default function Page(): ReactElement {
               { key: AppointmentType.PhoneConsultation, label: "مشاوره تلفنی" },
               { key: AppointmentType.TextConsultation, label: "مشاوره متنی" },
               { key: "All", label: "همه" },
+            ]}
+          />
+          <GenderComponent
+            title="جنسیت پزشک"
+            Options={[
+              { key: "MaleGender", label: "اقا" },
+              { key: "FemaleGender", label: "خانم" },
+              { key: "AllGender", label: " اقا و خانم" },
             ]}
           />
         </div>
