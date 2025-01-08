@@ -17,6 +17,8 @@
   align-items: center;
   place-content: center;
   width: 100%;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, color;
 
   .buttonLabel {
     flex: 1;
@@ -25,7 +27,8 @@
 
   .arrowIcon {
     margin-inline-start: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
+
   }
 
   .arrowOpen {

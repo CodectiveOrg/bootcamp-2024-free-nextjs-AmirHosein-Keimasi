@@ -7,6 +7,7 @@ import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteStarFill from "@/icons/MingcuteStarFill";
 import styles from "./doctorcard.module.css";
+import MingcuteArrowLeftFill from "@/icons/MingcuteArrowLeftFill";
 
 type Props = {
   doctors: DoctorModel[];
@@ -71,6 +72,10 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
               <p className={styles.gender}>
                 جنسیت: {doctor.gender === "Female" ? "خانم" : "آقا"}
               </p>
+            </div>
+            <div className={styles.profileLink}>
+              <span> مشاهده پروفایل</span>
+              <MingcuteArrowLeftFill className={styles.profileIcon} />
             </div>
           </div>
           <div className={styles.content}>

@@ -13,6 +13,26 @@
       transform 0.3s ease,
       box-shadow 0.3s ease;
 
+    .profileLink {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--color-primary-darker);
+      }
+
+      .profileIcon {
+        font-size: 1.2rem;
+      }
+    }
+
+
     .header {
       display: flex;
       gap: 1rem;

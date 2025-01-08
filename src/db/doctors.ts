@@ -11,7 +11,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 294,
     address:
       "خرم آباد,خرم آباد، بین چهارراه بانک و میدان شهدا،ساختمان پزشکان مانا طبقه چهارم",
-    firstAvailableAppointment: new Date("2025-01-07T10:00:00Z"), // تاریخ به فرمت ISO
+    firstAvailableAppointment: new Date("2025-01-08T10:00:00Z"),
     brief: "متخصص گفتاردرمانی ، گفتار درمانی کودکان",
     badges: ["خوش برخورد", "کمترین معطلی"],
     gender: "Female",
@@ -117,7 +117,7 @@ export const doctors: DoctorModel[] = [
     averageRating: 4.95,
     totalVotes: 423,
     address: "شیراز,خیابان زند، روبرو هتل پارس، ساختمان صدر زاده، طبقه دوم",
-    firstAvailableAppointment: new Date("2025-01-14T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-10T17:00:00Z"),
     brief: "فوق تخصص بیماری‌های قلب کودکان",
     badges: ["خوش برخورد"],
     gender: "Male",
@@ -151,7 +151,7 @@ export const doctors: DoctorModel[] = [
     averageRating: 4.93,
     totalVotes: 335,
     address: "تهران,تهران، خ شهرارا،خیابان بیستم،پلاک۸",
-    firstAvailableAppointment: new Date("2025-01-13T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-09T17:00:00Z"),
     brief: "فوق تخصص طب نوزادی و پیرامون تولد متخصص کودکان",
     badges: ["خوش برخورد"],
     gender: "Male",
@@ -187,7 +187,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 1404,
     address:
       "بیمارستان شهید بهشتی کاشان|کاشان,بلوار قطب راوندی-مجتمع بیمارستانی شهید بهشتی-کد پستی 87159/81151",
-    firstAvailableAppointment: new Date("2025-01-13T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-09T17:00:00Z"),
     brief: "فوق تخصص گوارش اطفال",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 15 دی 06:00", "خوش برخورد"],
     gender: "Male",
@@ -206,7 +206,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 1205,
     address:
       "تهران,تهران، خیابان دکتر قریب، بعد نصرت سر کوچه سوسن ساختمان شباهنگ واحد۳۴",
-    firstAvailableAppointment: new Date("2025-01-16T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-09T17:00:00Z"),
     brief: "فوق تخصص گوارش اطفال",
     badges: ["خوش برخورد"],
     gender: "Male",
@@ -221,7 +221,7 @@ export const doctors: DoctorModel[] = [
     averageRating: 4.86,
     totalVotes: 1053,
     address: "همدان,همدان، بلوار زینبیه، سبدبافان، کلینیک امید",
-    firstAvailableAppointment: new Date("2025-01-17T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-08T17:00:00Z"),
     brief: "متخصص بیماری‌های قلب و عروق",
     badges: ["خوش برخورد"],
     gender: "Male",
@@ -272,7 +272,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 949,
     address:
       "سمنان,سمنان، ولیعصر، تقاطع شریعتی، رو به روی بستنی شاد ساختمان باران طبقه 6 زنگ 13",
-    firstAvailableAppointment: new Date("2025-01-12T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-07T17:00:00Z"),
     brief: "فوق تخصص طب نوزادی و پیرامون تولد",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 13 دی 23:59", "خوش برخورد"],
     gender: "Male",
@@ -324,7 +324,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 118,
     address:
       "کلینیک بیمارستان نیکان|تهران,اقدسیه، ابتدای بلوار ارتش، ورودی اراج، خیابان 22 بهمن، شماره 6",
-    firstAvailableAppointment: new Date("2025-01-14T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-07T17:00:00Z"),
     brief: "متخصص قلب و عروق",
     badges: ["کمترین معطلی"],
     gender: "Male",
@@ -342,7 +342,7 @@ export const doctors: DoctorModel[] = [
     totalVotes: 223,
     address:
       "بیمارستان شهید هاشمی نژاد تهران|تهران,خیابان ولی عصر (عج)، بالاتر از میدان ونک، کوچه شهید والی نژاد",
-    firstAvailableAppointment: new Date("2025-01-162T17:00:00Z"),
+    firstAvailableAppointment: new Date("2025-01-08T17:00:00Z"),
     brief: "فلوشیپ ارولوژی اطفال",
     badges: ["فعال شدن نوبت‌دهی اینترنتی 30 فروردین 23:59", "خوش برخورد"],
     gender: "Male",
