@@ -1,9 +1,10 @@
 "use client";
-import React, { ReactElement, useContext } from "react";
+import React, { ReactElement, useContext, useMemo } from "react";
 
 import { DoctorModel, AppointmentType } from "@/models/doctor.model";
 import AppointmentTypes from "./appointment-types/appointment-types.component";
 import { FiltersContext } from "@/app/search/providers/filtersProviders";
+import GlobalSearchBoxComponent from "../globall-search-box/globall-search-box.component";
 
 import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
@@ -19,48 +20,51 @@ type Props = {
 export default function DoctorCard({ doctors }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
 
-  const filteredDoctors = doctors.filter((doctor) => {
-    if (filters.gender && filters.gender !== "AllGender") {
-      if (
-        (filters.gender === "MaleGender" && doctor.gender !== "Male") ||
-        (filters.gender === "FemaleGender" && doctor.gender !== "Female")
-      ) {
-        return false;
+  const filteredDoctors = useMemo(() => {
+    return doctors.filter((doctor) => {
+      if (filters.gender && filters.gender !== "AllGender") {
+        if (
+          (filters.gender === "MaleGender" && doctor.gender !== "Male") ||
+          (filters.gender === "FemaleGender" && doctor.gender !== "Female")
+        ) {
+          return false;
+        }
       }
-    }
 
-    if (filters.appointmentType && filters.appointmentType !== "All") {
-      const appointmentType = filters.appointmentType as AppointmentType;
-      if (!doctor.appointmentTypes.includes(appointmentType)) {
-        return false;
+      if (filters.appointmentType && filters.appointmentType !== "All") {
+        const appointmentType = filters.appointmentType as AppointmentType;
+        if (!doctor.appointmentTypes.includes(appointmentType)) {
+          return false;
+        }
       }
-    }
 
-    if (filters.dateFilter && filters.dateFilter !== "All") {
-      const today = new Date();
-      const appointmentDate = new Date(doctor.firstAvailableAppointment);
+      if (filters.dateFilter && filters.dateFilter !== "All") {
+        const today = new Date();
+        const appointmentDate = new Date(doctor.firstAvailableAppointment);
 
-      switch (filters.dateFilter) {
-        case "today":
-          return appointmentDate.toDateString() === today.toDateString();
-        case "tomorrow":
-          const tomorrow = new Date(today);
-          tomorrow.setDate(today.getDate() + 1);
-          return appointmentDate.toDateString() === tomorrow.toDateString();
-        case "next-7-days":
-          const next7Days = new Date(today);
-          next7Days.setDate(today.getDate() + 7);
-          return appointmentDate <= next7Days;
-        default:
-          return true;
+        switch (filters.dateFilter) {
+          case "today":
+            return appointmentDate.toDateString() === today.toDateString();
+          case "tomorrow":
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            return appointmentDate.toDateString() === tomorrow.toDateString();
+          case "next-7-days":
+            const next7Days = new Date(today);
+            next7Days.setDate(today.getDate() + 7);
+            return appointmentDate <= next7Days;
+          default:
+            return true;
+        }
       }
-    }
 
-    return true;
-  });
+      return true;
+    });
+  }, [doctors, filters]);
 
   return (
     <div className={styles.cardContainer}>
+      <GlobalSearchBoxComponent />{" "}
       {filteredDoctors.map((doctor) => (
         <div key={doctor.id} className={styles.card}>
           <div className={styles.header}>
