@@ -49,6 +49,7 @@ html[data-theme="light"] {
   --color-default-background: hsl(225, 100%, 99%);
   --color-default-foreground: hsl(220, 30%, 20%);
   --color-primary: hsl(30, 100%, 55%);
+  --color-primary-fade: hsl(0, 0%, 17%);
   --color-accent: hsl(47, 60%, 40%);
 
   --color-gray-98: hsl(0deg 0% 15%);

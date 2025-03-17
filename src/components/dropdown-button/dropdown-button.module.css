@@ -1,0 +1,87 @@
+.dropdownContainer {
+  margin-block-start: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.dropdownButton {
+  background-color: transparent;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid currentColor;
+
+  cursor: pointer;
+  display: flex;
+  text-align: "center";
+  align-items: center;
+  place-content: center;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, color;
+
+  .buttonLabel {
+    flex: 1;
+    text-align: center;
+  }
+
+  .arrowIcon {
+    margin-inline-start: 0.5rem;
+    transition: transform 0.5s ease;
+  }
+
+  .arrowOpen {
+    transform: rotate(180deg);
+  }
+
+  &:hover {
+    background-color: var(--color-primary-fade);
+    color: var(--color-primary-opposite);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  &.selected {
+    background-color: var(--color-primary);
+    color: var(--color-primary-opposite);
+    border-color: var(--color-primary);
+  }
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.dropdownItem {
+  padding: 0.8rem 1rem;
+  border: none;
+  text-align: right;
+  cursor: pointer;
+  width: 100%;
+  border-top: 1px solid var(--color-primary-fade);
+
+  &:hover {
+    background-color: var(--color-primary-fade);
+    color: var(--color-primary-opposite);
+  }
+
+  &.focus {
+    outline: none;
+    background-color: var(--color-gray-80);
+  }
+
+  &.active {
+    background-color: var(--color-primary);
+    color: var(--color-primary-opposite);
+  }
+}
