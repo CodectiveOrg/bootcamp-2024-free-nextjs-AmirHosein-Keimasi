@@ -1,8 +1,7 @@
 "use client";
 import React, { ReactElement, useContext, useMemo } from "react";
 
-import { DoctorModel, AppointmentType } from "@/models/doctor.model";
-import AppointmentTypes from "./appointment-types/appointment-types.component";
+import { DoctorModel } from "@/models/doctor.model";
 import { FiltersContext } from "@/app/search/providers/filtersProviders";
 import GlobalSearchBoxComponent from "../globall-search-box/globall-search-box.component";
 
@@ -31,12 +30,7 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
         }
       }
 
-      if (filters.appointmentType && filters.appointmentType !== "All") {
-        const appointmentType = filters.appointmentType as AppointmentType;
-        if (!doctor.appointmentTypes.includes(appointmentType)) {
-          return false;
-        }
-      }
+
 
       if (filters.dateFilter && filters.dateFilter !== "All") {
         const today = new Date();
@@ -118,7 +112,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
               <div className={styles.addressText}>{doctor.address}</div>
             </div>
 
-            <AppointmentTypes appointmentTypes={doctor.appointmentTypes} />
           </div>
           <div className={styles.badges}>
             {doctor.badges.map((badge, index) => (

@@ -5,7 +5,7 @@ import {
   PropsWithChildren,
   useState,
 } from "react";
-import { FiltersType } from "../types/filter.type";
+import { FiltersType } from "../../../types/filter.type";
 
 type ContextValue = {
   filters: FiltersType;

@@ -5,11 +5,7 @@ import { doctors } from "@/db/doctors";
 import Doctorcard from "@/components/doctor-card/doctorcard.component";
 
 import FiltersProvider from "./providers/filtersProviders";
-import GenderComponent from "./components/Gender/gender.component";
 
-import FilterDateComponent from "./components/FilterDate/FilterDate.component";
-import FilterAppointmentType from "./components/Appointment/FilterAppointmentType.component";
-import { AppointmentType } from "@/models/doctor.model";
 
 import MingcuteFilter3Fill from "@/icons/MingcuteFilter3Fill";
 
@@ -25,7 +21,7 @@ export default function Page(): ReactElement {
       <div className={styles.page}>
         <div className="">
           {" "}
-          <FilterDateComponent
+          {/* <FilterDateComponent
             title="اولین نوبت موجود"
             options={[
               { key: "today", label: "امروز" },
@@ -50,7 +46,7 @@ export default function Page(): ReactElement {
               { key: "FemaleGender", label: "خانم" },
               { key: "AllGender", label: " اقا و خانم" },
             ]}
-          />
+          /> */}
         </div>
         <Doctorcard doctors={doctors} />
       </div>
