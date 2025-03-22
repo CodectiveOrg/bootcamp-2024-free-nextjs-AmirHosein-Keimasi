@@ -13,7 +13,6 @@ import {
 import { DoctorModel } from "@/models/doctor.model";
 import { FiltersContext } from "./filtersProviders";
 
-
 type ContextValue = {
   filteredDoctors: DoctorModel[];
 };

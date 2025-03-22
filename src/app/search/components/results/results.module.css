@@ -2,7 +2,7 @@
   display: grid;
   gap: 1rem;
 
-  >li {
+  > li {
     background-color: var(--color-surface-700);
     box-shadow: var(--shadow-400);
 

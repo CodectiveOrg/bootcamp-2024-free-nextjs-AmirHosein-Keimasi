@@ -4,7 +4,6 @@
   font-size: var(--fz-500);
 }
 
-
 .expertise-filter {
   overflow: auto;
 
@@ -13,9 +12,7 @@
   scrollbar-width: thin;
   scrollbar-color: #888 var(--color-surface-300);
 
-
-
-  >li {
+  > li {
     button {
       background-color: transparent;
 

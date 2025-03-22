@@ -8,10 +8,8 @@ import {
   useReducer,
 } from "react";
 
-
 import { FiltersType } from "@/types/filter.type";
 import { FiltersAction, filtersReducer } from "../reducers/filters.reducer";
-
 
 type Value = {
   filters: FiltersType;

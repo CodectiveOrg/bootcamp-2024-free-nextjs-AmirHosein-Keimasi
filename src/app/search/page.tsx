@@ -25,10 +25,8 @@ type Props = {
   searchParams: SearchParams;
 };
 
-export default  function Page({
-  searchParams,
-}: Props): ReactElement {
-  const defaultFilters = generateDefaultFilters( searchParams);
+export default function Page({ searchParams }: Props): ReactElement {
+  const defaultFilters = generateDefaultFilters(searchParams);
 
   return (
     <FiltersProvider defaultFilters={defaultFilters}>

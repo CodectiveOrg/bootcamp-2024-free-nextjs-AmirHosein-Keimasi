@@ -30,8 +30,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
         }
       }
 
-
-
       if (filters.dateFilter && filters.dateFilter !== "All") {
         const today = new Date();
         const appointmentDate = new Date(doctor.firstAvailableAppointment);
@@ -111,7 +109,6 @@ export default function DoctorCard({ doctors }: Props): ReactElement {
               </div>
               <div className={styles.addressText}>{doctor.address}</div>
             </div>
-
           </div>
           <div className={styles.badges}>
             {doctor.badges.map((badge, index) => (
