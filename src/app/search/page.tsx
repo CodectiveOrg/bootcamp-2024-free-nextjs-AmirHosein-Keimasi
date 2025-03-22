@@ -24,6 +24,7 @@ import DegreeFilterComponent from "./components/degree-filter/degree-filter.comp
 import AppointmentFilterComponent from "./components/appointment-filter/appointment-filter.component";
 import ExpertiseFilterComponent from "./components/expertise-filter/expertise-filter.component";
 import GenderFilterComponent from "./components/gender-filter/gender-filter.component";
+import StatsComponent from "./components/stats/stats.component";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
@@ -52,7 +53,7 @@ export default async function Page({
           <div className={styles.toolbar}>
             {/* <SortComponent /> */}
             <AppointmentFilterComponent />
-            <div className={styles.stats}>{/* <StatsComponent /> */}</div>
+            <div className={styles.stats}><StatsComponent /></div>
           </div>
           <div className={styles.results}>
             <ResultsComponent />
