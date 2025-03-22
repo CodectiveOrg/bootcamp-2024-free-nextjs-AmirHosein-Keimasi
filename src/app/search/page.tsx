@@ -5,19 +5,6 @@ import GlobalSearchBoxComponent from "@/components/globall-search-box/globall-se
 import { FiltersType } from "@/types/filter.type";
 import { doctors } from "@/db/doctors";
 
-// import AppointmentFilterComponent from "@/app/search/components/appointment-filter/appointment-filter.component";
-// import DegreeFilterComponent from "@/app/search/components/degree-filter/degree-filter.component";
-// import ExpertiseFilterComponent from "@/app/search/components/expertise-filter/expertise-filter.component";
-// import FiltersSummaryComponent from "@/app/search/components/filters-summary/filters-summary.component";
-// import GenderFilterComponent from "@/app/search/components/gender-filter/gender-filter.component";
-// import ResultsComponent from "@/app/search/components/results/results.component";
-// import SortComponent from "@/app/search/components/sort/sort.component";
-// import StatsComponent from "@/app/search/components/stats/stats.component";
-
-import FiltersProvider from "./providers/filtersProviders";
-import DoctorsProvider from "./providers/doctors.provider";
-
-import styles from "./page.module.css";
 import ResultsComponent from "./components/results/results.component";
 import FiltersSummaryComponent from "./components/filters-summary/filters-summary.component";
 import DegreeFilterComponent from "./components/degree-filter/degree-filter.component";
@@ -25,17 +12,23 @@ import AppointmentFilterComponent from "./components/appointment-filter/appointm
 import ExpertiseFilterComponent from "./components/expertise-filter/expertise-filter.component";
 import GenderFilterComponent from "./components/gender-filter/gender-filter.component";
 import StatsComponent from "./components/stats/stats.component";
+import SortComponent from "./components/sort/sort.component";
+
+import FiltersProvider from "./providers/filtersProviders";
+import DoctorsProvider from "./providers/doctors.provider";
+
+import styles from "./page.module.css";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
 type Props = {
-  searchParams: Promise<SearchParams>;
+  searchParams: SearchParams;
 };
 
-export default async function Page({
+export default  function Page({
   searchParams,
-}: Props): Promise<ReactElement> {
-  const defaultFilters = generateDefaultFilters(await searchParams);
+}: Props): ReactElement {
+  const defaultFilters = generateDefaultFilters( searchParams);
 
   return (
     <FiltersProvider defaultFilters={defaultFilters}>
@@ -51,9 +44,11 @@ export default async function Page({
             <DegreeFilterComponent />
           </div>
           <div className={styles.toolbar}>
-            {/* <SortComponent /> */}
+            <SortComponent />
             <AppointmentFilterComponent />
-            <div className={styles.stats}><StatsComponent /></div>
+            <div className={styles.stats}>
+              <StatsComponent />
+            </div>
           </div>
           <div className={styles.results}>
             <ResultsComponent />

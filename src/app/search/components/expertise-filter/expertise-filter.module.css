@@ -1,27 +1,38 @@
+.title {
+  margin-block-end: 0.5rem;
+
+  font-size: var(--fz-500);
+}
+
+
 .expertise-filter {
-    overflow: auto;
-  
-    max-block-size: 20rem;
-  
-    scrollbar-width: thin;
-  
-    > li {
-      button {
-        background-color: transparent;
-  
-        inline-size: 100%;
-  
-        border: none;
-  
-        padding: 0.25rem 0.5rem;
-  
-        text-align: start;
-  
-        cursor: pointer;
-  
-        &:hover {
-          background-color: var(--color-surface-400);
-        }
+  overflow: auto;
+
+  max-block-size: 20rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: #888 var(--color-surface-300);
+
+
+
+  >li {
+    button {
+      background-color: transparent;
+
+      inline-size: 100%;
+
+      border: none;
+
+      padding: 0.25rem 0.5rem;
+
+      text-align: start;
+
+      cursor: pointer;
+      color: inherit;
+
+      &:hover {
+        background-color: var(--color-surface-400);
       }
     }
   }
+}

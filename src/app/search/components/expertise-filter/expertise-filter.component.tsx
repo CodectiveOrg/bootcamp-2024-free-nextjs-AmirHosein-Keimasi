@@ -55,6 +55,7 @@ export default function ExpertiseFilterComponent(): ReactElement {
 
   return (
     <CardComponent>
+      <div className={styles["title"]}>تخصص</div>
       <ul className={styles["expertise-filter"]}>
         {options.map((x) => (
           <li key={x}>
