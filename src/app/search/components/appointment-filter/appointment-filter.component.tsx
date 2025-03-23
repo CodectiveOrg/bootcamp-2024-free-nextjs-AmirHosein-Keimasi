@@ -1,9 +1,8 @@
 "use client";
 
-import { ReactElement, useState } from "react";
-
+import { ReactElement, useContext, useState } from "react";
+import { FiltersContext } from "../../providers/filter.providers";
 import SelectComponent from "@/components/select/select.component";
-
 import { SelectOptionType } from "@/types/select-option.type";
 
 const options: SelectOptionType[] = [
@@ -16,9 +15,20 @@ const options: SelectOptionType[] = [
 ];
 
 export default function AppointmentFilterComponent(): ReactElement {
+  const { filters, dispatchFilters } = useContext(FiltersContext);
   const [selectedOption, setSelectedOption] = useState<SelectOptionType>(
-    options[0],
+    options.find((option) => option.value === filters.appointment) ||
+      options[0],
   );
+
+  const changeHandler = (option: SelectOptionType): void => {
+    setSelectedOption(option);
+    dispatchFilters({
+      type: "updated_filter",
+      key: "appointment",
+      value: option.value,
+    });
+  };
 
   return (
     <SelectComponent
@@ -26,7 +36,7 @@ export default function AppointmentFilterComponent(): ReactElement {
       title="نزدیک‌ترین نوبت"
       options={options}
       selectedOption={selectedOption}
-      onSelectedOptionChange={setSelectedOption}
+      onSelectedOptionChange={changeHandler}
     />
   );
 }

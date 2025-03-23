@@ -7,7 +7,7 @@ export type DoctorModel = {
   averageRating: number;
   totalVotes: number;
   address: string;
-  firstAvailableAppointment: string;
+  appointment: string;
   brief: string;
   degree: string;
   expertise: string;

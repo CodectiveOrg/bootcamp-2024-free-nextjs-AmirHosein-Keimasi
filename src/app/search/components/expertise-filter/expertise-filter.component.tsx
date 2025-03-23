@@ -4,7 +4,7 @@ import { ReactElement, useContext } from "react";
 
 import CardComponent from "@/components/card-component/card-component.component";
 
-import { FiltersContext } from "../../providers/filtersProviders";
+import { FiltersContext } from "../../providers/filter.providers";
 
 import styles from "./expertise-filter.module.css";
 

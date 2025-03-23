@@ -3,10 +3,18 @@
     margin-block-end: 0.5rem;
 
     font-weight: 900;
+
+    &:hover {
+      background-color: var(--color-surface-400);
+    }
   }
 
   label {
     display: flex;
     gap: 0.5rem;
+
+    &:hover {
+      background-color: var(--color-surface-400);
+    }
   }
 }

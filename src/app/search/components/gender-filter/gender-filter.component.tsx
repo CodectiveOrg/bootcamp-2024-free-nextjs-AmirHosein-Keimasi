@@ -2,7 +2,7 @@
 
 import { ReactElement, useContext } from "react";
 
-import { FiltersContext } from "@/app/search/providers/filtersProviders";
+import { FiltersContext } from "@/app/search/providers/filter.providers";
 
 import RadioFilterComponent from "@/app/search/components/radio-filter/radio-filter.component";
 

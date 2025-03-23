@@ -9,9 +9,8 @@ import {
   useEffect,
   useState,
 } from "react";
-
 import { DoctorModel } from "@/models/doctor.model";
-import { FiltersContext } from "./filtersProviders";
+import { FiltersContext } from "./filter.providers";
 
 type ContextValue = {
   filteredDoctors: DoctorModel[];
@@ -30,7 +29,6 @@ export default function DoctorsProvider({
   doctors,
 }: Props): ReactElement {
   const { filters } = useContext(FiltersContext);
-
   const [filteredDoctors, setFilteredDoctors] = useState<DoctorModel[]>([]);
 
   const isVisible = useCallback(
@@ -39,7 +37,8 @@ export default function DoctorsProvider({
         doesDoctorInclude(doctor, filters.query) &&
         doesInclude(doctor.expertise, filters.expertise) &&
         doesInclude(doctor.gender, filters.gender) &&
-        doesInclude(doctor.degree, filters.degree)
+        doesInclude(doctor.degree, filters.degree) &&
+        isAppointmentValid(doctor.appointment, filters.appointment)
       );
     },
     [filters],
@@ -57,25 +56,38 @@ export default function DoctorsProvider({
 }
 
 function doesDoctorInclude(doctor: DoctorModel, query?: string): boolean {
-  if (!query) {
-    return true;
-  }
-
+  if (!query) return true;
   return doesSomeInclude([doctor.name, doctor.brief, doctor.address], query);
 }
 
 function doesSomeInclude(items: string[], query?: string): boolean {
-  if (!query) {
-    return true;
-  }
-
+  if (!query) return true;
   return items.some((item) => doesInclude(item, query));
 }
 
 function doesInclude(item: string, query?: string): boolean {
-  if (!query) {
-    return true;
-  }
-
+  if (!query) return true;
   return item.toLowerCase().includes(query.toLowerCase());
+}
+
+function isAppointmentValid(
+  appointmentValue: string,
+  filterValue?: string,
+): boolean {
+  if (!filterValue || filterValue === "all") return true;
+
+  switch (filterValue) {
+    case "today":
+      return appointmentValue === "امروز";
+    case "tomorrow":
+      return appointmentValue === "تا فردا";
+    case "inThreeDays":
+      return appointmentValue === "تا سه روز";
+    case "inFiveDays":
+      return appointmentValue === "تا پنج روز";
+    case "inSevenDays":
+      return appointmentValue === "تا هفت روز";
+    default:
+      return true;
+  }
 }

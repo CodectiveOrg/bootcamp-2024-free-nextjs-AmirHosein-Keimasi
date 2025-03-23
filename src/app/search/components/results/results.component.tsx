@@ -51,7 +51,7 @@ export default function ResultsComponent(): ReactElement {
               </span>
             </div>
             <div className={styles.caption}>
-              اولین نوبت: {doctor.firstAvailableAppointment}
+              اولین نوبت: {doctor.appointment}
             </div>
             <Link href={`/doctor/${doctor.id}`}>نوبت‌دهی آنلاین</Link>
           </div>

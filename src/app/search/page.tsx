@@ -14,7 +14,7 @@ import GenderFilterComponent from "./components/gender-filter/gender-filter.comp
 import StatsComponent from "./components/stats/stats.component";
 import SortComponent from "./components/sort/sort.component";
 
-import FiltersProvider from "./providers/filtersProviders";
+import FiltersProvider from "./providers/filter.providers";
 import DoctorsProvider from "./providers/doctors.provider";
 
 import styles from "./page.module.css";

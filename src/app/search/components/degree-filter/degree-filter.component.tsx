@@ -4,7 +4,7 @@ import { ReactElement, useContext } from "react";
 
 import RadioFilterComponent from "../radio-filter/radio-filter.component";
 
-import { FiltersContext } from "../../providers/filtersProviders";
+import { FiltersContext } from "../../providers/filter.providers";
 
 export default function DegreeFilterComponent(): ReactElement {
   const { filters, dispatchFilters } = useContext(FiltersContext);

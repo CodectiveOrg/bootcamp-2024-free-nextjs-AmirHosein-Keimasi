@@ -2,7 +2,7 @@
 import React, { ReactElement, useContext, useMemo } from "react";
 
 import { DoctorModel } from "@/models/doctor.model";
-import { FiltersContext } from "@/app/search/providers/filtersProviders";
+import { FiltersContext } from "@/app/search/providers/filter.providers";
 import GlobalSearchBoxComponent from "../globall-search-box/globall-search-box.component";
 
 import MingcuteTimeFill from "@/icons/MingcuteTimeFill";
