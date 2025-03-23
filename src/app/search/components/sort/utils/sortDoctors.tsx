@@ -11,7 +11,7 @@ export function sortDoctors(
       return [...doctors].sort((a, b) => b.totalVotes - a.totalVotes);
     case "appointment": {
       const appointmentPriority: Record<string, number> = {
-        "امروز": 1,
+        امروز: 1,
         "تا فردا": 2,
         "تا سه روز": 3,
         "تا پنج روز": 4,
