@@ -2,7 +2,7 @@
 
 import { ChangeEvent, ReactElement } from "react";
 
-import CardComponent from "@/components/card-component/card-component.component";
+import CardComponent from "@/components/card-component/card-component";
 
 import { SelectOptionType } from "@/types/select-option.type";
 

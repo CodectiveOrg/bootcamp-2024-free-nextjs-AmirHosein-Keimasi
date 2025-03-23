@@ -2,7 +2,7 @@
 
 import { ReactElement, useContext } from "react";
 
-import CardComponent from "@/components/card-component/card-component.component";
+import CardComponent from "@/components/card-component/card-component";
 
 import { FiltersContext } from "../../providers/filter.providers";
 
