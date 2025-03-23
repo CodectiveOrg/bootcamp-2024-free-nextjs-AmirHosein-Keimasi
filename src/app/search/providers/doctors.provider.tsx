@@ -10,7 +10,10 @@ import {
   useState,
 } from "react";
 import { DoctorModel } from "@/models/doctor.model";
+
 import { FiltersContext } from "./filter.providers";
+
+import { sortDoctors } from "../components/sort/utils/sortDoctors";
 
 type ContextValue = {
   filteredDoctors: DoctorModel[];
@@ -45,8 +48,14 @@ export default function DoctorsProvider({
   );
 
   useEffect(() => {
-    setFilteredDoctors(doctors.filter(isVisible));
-  }, [isVisible, doctors]);
+    let sortedDoctors = doctors.filter(isVisible);
+
+    if (filters.sortType) {
+      sortedDoctors = sortDoctors(sortedDoctors, filters.sortType);
+    }
+
+    setFilteredDoctors(sortedDoctors);
+  }, [isVisible, doctors, filters.sortType]);
 
   return (
     <DoctorsContext.Provider value={{ filteredDoctors }}>

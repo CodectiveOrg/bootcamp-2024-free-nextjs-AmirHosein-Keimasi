@@ -4,4 +4,5 @@ export type FiltersType = {
   gender?: string;
   degree?: string;
   appointment?: string;
+  sortType?: string;
 };
