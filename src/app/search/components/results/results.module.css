@@ -4,7 +4,6 @@
   gap: 1rem;
   justify-content: center;
 
-
   .card {
     background: var(--color-surface-700);
     border-radius: var(--border-radius);
@@ -29,22 +28,16 @@
       font-size: var(--fz-300);
       color: var(--color-text-700);
 
-
       .LocIcon {
         color: var(--color-star);
         font-size: var(--fz-400);
-        ;
         margin-block-end: -0.05em;
       }
     }
 
-
-
     .image {
-
       border-radius: var(--border-radius);
     }
-
   }
 
   .title {
@@ -66,8 +59,7 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width:
-        7rem;
+      width: 7rem;
       height: 1px;
       background: var(--color-text-700);
       transform: translate(-20%, -50%);
@@ -92,7 +84,6 @@
     font-size: var(--fz-400);
     flex-wrap: wrap;
     color: var(--color-text-700);
-
   }
 
   .icon {
@@ -104,7 +95,6 @@
     color: var(--color-text-700);
   }
 
-
   .badges {
     margin-top: 0.5rem;
     display: flex;
@@ -112,9 +102,7 @@
     justify-content: space-between;
     font-size: var(--fz-200);
 
-
     .badge {
-
       background-color: var(--color-surface-400);
       border-radius: var(--border-radius);
       padding: 1rem 1.4rem;
@@ -140,15 +128,11 @@
     .redPrice {
       color: var(--color-danger);
     }
-
   }
-
 
   .span2 {
     color: var(--color-danger);
   }
-
-
 
   .receiveLink,
   .detailsLink {

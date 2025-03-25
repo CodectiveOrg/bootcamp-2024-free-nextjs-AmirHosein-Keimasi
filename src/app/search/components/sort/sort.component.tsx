@@ -10,8 +10,8 @@ import { FiltersContext } from "../../providers/filter.providers";
 
 const options: SelectOptionType[] = [
   { value: "model", label: "مدل" },
-  { value: "price-to-up", label:"ارزان ترین" },
-  { value: "price-to-down", label:  "گران ترین" },
+  { value: "price-to-up", label: "ارزان ترین" },
+  { value: "price-to-down", label: "گران ترین" },
   { value: "name", label: "حروف الفبا" },
 ];
 

@@ -59,7 +59,8 @@ export default function FooterComponent(): ReactElement {
         </ul>
       </div>
       <p className={styles.copy}>
-        تمامی حقوق این وب‌سایت و خدمات آن متعلق به <span>کارِ مون</span> می‌باشد.
+        تمامی حقوق این وب‌سایت و خدمات آن متعلق به <span>کارِ مون</span>{" "}
+        می‌باشد.
       </p>
     </footer>
   );

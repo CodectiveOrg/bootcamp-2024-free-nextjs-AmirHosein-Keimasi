@@ -44,11 +44,11 @@ export const cars: CarsModel[] = [
       acceleration: 12.5,
       fuel_consumption: 6.8,
     },
-    with_driver: "با راننده",  img:"runa.png"
-    ,location:'تهران'
-
+    with_driver: "با راننده",
+    img: "runa.png",
+    location: "تهران",
   },
-  
+
   {
     id: "samand-soren-1401-011",
     name: "سمند سورن پلاس",
@@ -92,8 +92,9 @@ export const cars: CarsModel[] = [
       acceleration: 11.8,
       fuel_consumption: 7.4,
     },
-    with_driver: "با راننده",img:"samand-lx.png",location:'تهران'
-
+    with_driver: "با راننده",
+    img: "samand-lx.png",
+    location: "تهران",
   },
   {
     id: "peugeot-206-1400-012",
@@ -138,9 +139,11 @@ export const cars: CarsModel[] = [
       acceleration: 13.0,
       fuel_consumption: 6.5,
     },
-    with_driver: "با راننده ",img:"p206.png",location:'اصفهان'
-
-  },{
+    with_driver: "با راننده ",
+    img: "p206.png",
+    location: "اصفهان",
+  },
+  {
     id: "renault-l90-automatic-1400-001",
     name: "رنو ال ۹۰ اتوماتیک",
     model: "2022-1402",
@@ -148,12 +151,12 @@ export const cars: CarsModel[] = [
       days_3_to_14: 1500000,
       more_than_14_days: 1400000,
       minimum_rental: 3,
-      deposit: 25000000
+      deposit: 25000000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: false,
@@ -174,17 +177,18 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB"],
       braking_system: ["ABS", "EBD"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 1.6,
       cylinders: 4,
       acceleration: 11.7,
-      fuel_consumption: 8.3
+      fuel_consumption: 8.3,
     },
-    with_driver: " بدون راننده ",img:"l90.png",location:'خراسان رضوی'
-
+    with_driver: " بدون راننده ",
+    img: "l90.png",
+    location: "خراسان رضوی",
   },
   {
     id: "peugeot-pars-1400-002",
@@ -194,12 +198,12 @@ export const cars: CarsModel[] = [
       days_3_to_14: 1400000,
       more_than_14_days: 1300000,
       minimum_rental: 3,
-      deposit: 22000000
+      deposit: 22000000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: false,
@@ -220,19 +224,20 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB"],
       braking_system: ["ABS", "EBD"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 1.8,
       cylinders: 4,
       acceleration: 11.0,
-      fuel_consumption: 8.5
+      fuel_consumption: 8.5,
     },
-    with_driver: " بدون راننده ",img:"pars.png",location:'مشهد'
-
+    with_driver: " بدون راننده ",
+    img: "pars.png",
+    location: "مشهد",
   },
- 
+
   {
     id: "chery-arrizo5-1400-004",
     name: "چری آریزو ۵",
@@ -241,12 +246,12 @@ export const cars: CarsModel[] = [
       days_3_to_14: 1700000,
       more_than_14_days: 1600000,
       minimum_rental: 3,
-      deposit: 24000000
+      deposit: 24000000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: true,
@@ -267,18 +272,20 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB"],
       braking_system: ["ABS", "EBD"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 1.5,
       cylinders: 4,
       acceleration: 11.0,
-      fuel_consumption: 6.5
+      fuel_consumption: 6.5,
     },
-    with_driver: " بدون راننده ",img:"cherry-arizo-5.png",location:'البرز'
-
-  },  { 
+    with_driver: " بدون راننده ",
+    img: "cherry-arizo-5.png",
+    location: "البرز",
+  },
+  {
     id: "kia_cerato_2018_001",
     name: "کیا سراتو",
     model: "2018-1397",
@@ -286,12 +293,12 @@ export const cars: CarsModel[] = [
       days_3_to_14: 1800000,
       more_than_14_days: 1700000,
       minimum_rental: 3,
-      deposit: 25000000
+      deposit: 25000000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: true,
@@ -312,31 +319,33 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB", "AUX"],
       braking_system: ["ABS", "EBD", "ESP"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 2.0,
       cylinders: 4,
       acceleration: 10.5,
-      fuel_consumption: 7.2
+      fuel_consumption: 7.2,
     },
-    with_driver: "با راننده ",img:"kia-cerato-.png",location:'اصفهان'
-
+    with_driver: "با راننده ",
+    img: "kia-cerato-.png",
+    location: "اصفهان",
   },
-  { id:"mvm_x33_2018_002",
+  {
+    id: "mvm_x33_2018_002",
     name: "ام وی ام X33",
     model: "2018-1397",
     rental: {
       days_3_to_14: 1600000,
       more_than_14_days: 1500000,
       minimum_rental: 3,
-      deposit: 23000000
+      deposit: 23000000,
     },
     capacity: {
       passengers: 5,
       luggage: 4,
-      door: 5
+      door: 5,
     },
     features: {
       cruise_control: false,
@@ -357,32 +366,33 @@ export const cars: CarsModel[] = [
       connectivity: ["USB", "AUX"],
       braking_system: ["ABS", "EBD"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 2.0,
       cylinders: 4,
       acceleration: 12.5,
-      fuel_consumption: 6.9
+      fuel_consumption: 6.9,
     },
-    with_driver: "با راننده "   , img:"optima.png"
-    ,location:'تهران'
-
+    with_driver: "با راننده ",
+    img: "optima.png",
+    location: "تهران",
   },
-  {id:"mitsubishi_lancer_2018_003",
+  {
+    id: "mitsubishi_lancer_2018_003",
     name: "میتسوبیشی لنسر",
     model: "2018-1397",
     rental: {
       days_3_to_14: 1900000,
       more_than_14_days: 1800000,
       minimum_rental: 3,
-      deposit: 26000000
+      deposit: 26000000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: true,
@@ -403,32 +413,33 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB", "AUX"],
       braking_system: ["ABS", "EBD", "ESP"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 1.8,
       cylinders: 4,
       acceleration: 10.0,
-      fuel_consumption: 7.0
+      fuel_consumption: 7.0,
     },
-    with_driver: " بدون راننده ",    img:"hyundai-santafe.png"
-    ,location:'خراسان رضوی'
-
+    with_driver: " بدون راننده ",
+    img: "hyundai-santafe.png",
+    location: "خراسان رضوی",
   },
- { id:"hyundai_elantra_2018_004",
+  {
+    id: "hyundai_elantra_2018_004",
     name: "هیوندای النترا",
     model: "2020-1399",
     rental: {
       days_3_to_14: 1850000,
       more_than_14_days: 1750000,
       minimum_rental: 3,
-      deposit: 25500000
+      deposit: 25500000,
     },
     capacity: {
       passengers: 5,
       luggage: 3,
-      door: 4
+      door: 4,
     },
     features: {
       cruise_control: true,
@@ -449,18 +460,17 @@ export const cars: CarsModel[] = [
       connectivity: ["Bluetooth", "USB", "AUX"],
       braking_system: ["ABS", "EBD", "ESP"],
       auto_park: false,
-      auto_drive: false
+      auto_drive: false,
     },
     engine: {
       type: "بنزینی",
       capacity: 2.0,
       cylinders: 4,
       acceleration: 9.6,
-      fuel_consumption: 7.5
+      fuel_consumption: 7.5,
     },
     with_driver: "با راننده ",
-    img:"elentra.png"
-    ,location:'البرز'
-
-  }
+    img: "elentra.png",
+    location: "البرز",
+  },
 ];
