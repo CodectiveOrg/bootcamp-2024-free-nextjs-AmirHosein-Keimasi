@@ -2,16 +2,16 @@
 
 import { ReactElement, useContext } from "react";
 
-import { DoctorsContext } from "../../providers/doctors.provider";
+import { CarsContext } from "../../providers/cars.provider";
 
 import styles from "./stats.module.css";
 
 export default function StatsComponent(): ReactElement {
-  const { filteredDoctors } = useContext(DoctorsContext);
+  const { filteredCars } = useContext(CarsContext);
 
   return (
     <div className={styles.stats}>
-      {filteredDoctors.length.toLocaleString()} نتیجه
+      {filteredCars.length.toLocaleString()} نتیجه
     </div>
   );
 }

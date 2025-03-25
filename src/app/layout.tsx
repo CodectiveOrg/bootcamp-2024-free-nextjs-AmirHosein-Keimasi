@@ -14,8 +14,9 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "وقت‌ دکتر",
-  description: "پلتفرمی یکپارچه برای یافتن پزشک و رزرو آنلاین نوبت ",
+  title: "کارِ مون",
+  description:
+    "پلتفرمی یکپارچه برای اجاره خودرو و رزرو آنلاین ماشین در سراسر ایران",
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
         <HeaderComponent />
         <main>{children}</main>
         <p className="tagline">
-          پلتفرمی یکپارچه برای یافتن پزشک و رزرو آنلاین نوبت{" "}
+          پلتفرمی یکپارچه برای اجاره خودرو و رزرو آنلاین ماشین در سراسر ایران{" "}
         </p>
         <FooterComponent />
       </body>

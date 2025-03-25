@@ -30,7 +30,7 @@
     flex-wrap: wrap;
     gap: 0.5rem;
 
-    > li {
+    >li {
       background-color: var(--color-surface-700);
       box-shadow: var(--shadow-400);
 

@@ -4,10 +4,10 @@
   font-size: var(--fz-500);
 }
 
-.expertise-filter {
+.location-filter {
   overflow: auto;
 
-  max-block-size: 20rem;
+  max-block-size: 18rem;
 
   scrollbar-width: thin;
   scrollbar-color: #888 var(--color-surface-300);

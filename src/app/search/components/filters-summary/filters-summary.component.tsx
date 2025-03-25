@@ -15,7 +15,11 @@ export default function FiltersSummaryComponent(): ReactElement | null {
 
   const isEmpty = useMemo(() => {
     return (
-      !filters.query && !filters.expertise && !filters.gender && !filters.degree
+      !filters.query &&
+      !filters.model &&
+      !filters.transmission &&
+      !filters.location &&
+      !filters.with_driver
     );
   }, [filters]);
 
@@ -44,19 +48,22 @@ export default function FiltersSummaryComponent(): ReactElement | null {
           {filters.query && (
             <li onClick={() => filterClickHandler("query")}>{filters.query}</li>
           )}
-          {filters.expertise && (
-            <li onClick={() => filterClickHandler("expertise")}>
-              {filters.expertise}
+          {filters.model && (
+            <li onClick={() => filterClickHandler("model")}>{filters.model}</li>
+          )}
+          {filters.transmission && (
+            <li onClick={() => filterClickHandler("transmission")}>
+              {filters.transmission}
             </li>
           )}
-          {filters.gender && (
-            <li onClick={() => filterClickHandler("gender")}>
-              {filters.gender}
+          {filters.location && (
+            <li onClick={() => filterClickHandler("location")}>
+              {filters.location}
             </li>
           )}
-          {filters.degree && (
-            <li onClick={() => filterClickHandler("degree")}>
-              {filters.degree}
+          {filters.location && (
+            <li onClick={() => filterClickHandler("with_driver")}>
+              {filters.with_driver}
             </li>
           )}
         </ul>

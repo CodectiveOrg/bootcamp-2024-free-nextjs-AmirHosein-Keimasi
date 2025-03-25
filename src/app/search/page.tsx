@@ -3,19 +3,21 @@ import { ReactElement } from "react";
 import GlobalSearchBoxComponent from "@/components/globall-search-box/globall-search-box.component";
 
 import { FiltersType } from "@/types/filter.type";
-import { doctors } from "@/db/doctors";
 
 import ResultsComponent from "./components/results/results.component";
 import FiltersSummaryComponent from "./components/filters-summary/filters-summary.component";
-import DegreeFilterComponent from "./components/degree-filter/degree-filter.component";
-import AppointmentFilterComponent from "./components/appointment-filter/appointment-filter.component";
-import ExpertiseFilterComponent from "./components/expertise-filter/expertise-filter.component";
-import GenderFilterComponent from "./components/gender-filter/gender-filter.component";
 import StatsComponent from "./components/stats/stats.component";
-import SortComponent from "./components/sort/sort.component";
+import WithDriverFilterComponent from "./components/withdriver-filter/withdriver-filter.component";
+import ModelFilterComponent from "./components/model-filter/model-filter.component";
+import LocationFilterComponent from "./components/location-filter/location-filter.component";
+import TransmissionFilterComponent from "./components/transmission-filter/transmission-filter.component";
 
 import FiltersProvider from "./providers/filter.providers";
-import DoctorsProvider from "./providers/doctors.provider";
+import CarsProvider from "./providers/cars.provider";
+
+import SortComponent from "./components/sort/sort.component";
+
+import { cars } from "@/db/cars";
 
 import styles from "./page.module.css";
 
@@ -30,20 +32,21 @@ export default function Page({ searchParams }: Props): ReactElement {
 
   return (
     <FiltersProvider defaultFilters={defaultFilters}>
-      <DoctorsProvider doctors={doctors}>
+      <CarsProvider cars={cars}>
         <div className={styles.page}>
           <div className={styles.search}>
             <GlobalSearchBoxComponent />
           </div>
           <div className={styles.filters}>
             <FiltersSummaryComponent />
-            <ExpertiseFilterComponent />
-            <GenderFilterComponent />
-            <DegreeFilterComponent />
+            <LocationFilterComponent />
+            <ModelFilterComponent />
+            <TransmissionFilterComponent />
+            <WithDriverFilterComponent />
           </div>
           <div className={styles.toolbar}>
             <SortComponent />
-            <AppointmentFilterComponent />
+            {/* <AppointmentFilterComponent /> */}
             <div className={styles.stats}>
               <StatsComponent />
             </div>
@@ -52,19 +55,20 @@ export default function Page({ searchParams }: Props): ReactElement {
             <ResultsComponent />
           </div>
         </div>
-      </DoctorsProvider>
+      </CarsProvider>
     </FiltersProvider>
   );
 }
 
 function generateDefaultFilters(searchParams: SearchParams): FiltersType {
-  const { query, expertise, gender, degree } = searchParams;
+  const { query, model, transmission, location, with_driver } = searchParams;
 
   return {
     query: normalizeFilter(query),
-    expertise: normalizeFilter(expertise),
-    gender: normalizeFilter(gender),
-    degree: normalizeFilter(degree),
+    model: normalizeFilter(model),
+    transmission: normalizeFilter(transmission),
+    location: normalizeFilter(location),
+    with_driver: normalizeFilter(with_driver),
   };
 }
 

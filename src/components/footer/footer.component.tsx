@@ -17,56 +17,49 @@ export default function FooterComponent(): ReactElement {
   return (
     <footer className={styles.footer}>
       <div className={styles.writings}>
-        <div className={styles.logo}> وقت‌ دکتر</div>
+        <div className={styles.logo}>کارِ مون</div>
         <p className={styles.description}>
-          تجربه مشاوره آنلاین و دریافت نوبت از بهترین پزشکان و بیمارستان‌های
-          ایران
+          بهترین تجربه اجاره خودرو با شرایط آسان و قیمت‌های مناسب در سراسر ایران
         </p>
       </div>
       <div className={styles.visuals}>
         <ul className={styles.certificates}>
           <li>
             <Link href="#">
-              <Image src={idkLogo} alt="IDK Logo" />
+              <Image src={idkLogo} alt="مجوز کسب و کار" />
             </Link>
           </li>
           <li>
             <Link href="#">
-              <Image src={certificateLogo} alt="Certificate Logo" />
+              <Image src={certificateLogo} alt="گواهی کیفیت خدمات" />
             </Link>
           </li>
           <li>
             <Link href="#">
-              <Image src={enamadLogo} alt="Enamad Logo" />
+              <Image src={enamadLogo} alt="نماد اعتماد الکترونیکی" />
             </Link>
           </li>
         </ul>
         <ul className={styles.socials}>
           <li>
-            <Link href="https://telegram.im/@amir1_1" target="_blank">
+            <Link href="https://telegram.im/@rentcar" target="_blank">
               <MingcuteTelegramFill />
             </Link>
           </li>
           <li>
-            <Link
-              href="https://www.linkedin.com/in/amirhossein-keimasi"
-              target="_blank"
-            >
+            <Link href="https://www.linkedin.com/in/rentcar" target="_blank">
               <MingcuteLinkedinFill />
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/amirhosein-keimasi" target="_blank">
+            <Link href="https://youtube.com/rentcar" target="_blank">
               <MingcuteYoutubeFill />
             </Link>
           </li>
         </ul>
       </div>
       <p className={styles.copy}>
-        {" "}
-        تمامی حقوق مادی و معنوی این وب‌سایت، خدمات و محتوای مربوط به آن متعلق به
-        <span>وقت‌ دکتر</span>
-        می‌باشد!
+        تمامی حقوق این وب‌سایت و خدمات آن متعلق به <span>کارِ مون</span> می‌باشد.
       </p>
     </footer>
   );

@@ -6,22 +6,22 @@ import { FiltersContext } from "@/app/search/providers/filter.providers";
 
 import RadioFilterComponent from "@/app/search/components/radio-filter/radio-filter.component";
 
-export default function GenderFilterComponent(): ReactElement {
+export default function TransmissionFilterComponent(): ReactElement {
   const { filters, dispatchFilters } = useContext(FiltersContext);
 
   const changeHandler = (value: string): void => {
-    dispatchFilters({ type: "updated_filter", key: "gender", value });
+    dispatchFilters({ type: "updated_filter", key: "transmission", value });
   };
 
   return (
     <RadioFilterComponent
-      title="جنسیت پزشک"
+      title="نوع دنده"
       name="gender"
       options={[
-        { value: "آقا", label: "آقا" },
-        { value: "خانم", label: "خانم" },
+        { value: "اتوماتیک", label: "اتوماتیک" },
+        { value: "دستی", label: "دستی" },
       ]}
-      value={filters.gender}
+      value={filters.transmission}
       onChange={changeHandler}
     />
   );

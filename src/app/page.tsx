@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import MyDoctorLogo from "@/logo/my-doctor.logo";
+import CarmonLogo from "@/logo/CarmonLogo";
 
 import GlobalSearchBoxComponent from "@/components/globall-search-box/globall-search-box.component";
 import StatsComponents from "@/components/stats/stats.component";
@@ -11,8 +11,8 @@ export default function Home(): ReactElement {
   return (
     <div className={styles.home}>
       <h1>
-        <MyDoctorLogo />
-        وقت‌ دکتر{" "}
+        <CarmonLogo />
+        کارِ مون{" "}
       </h1>
       <GlobalSearchBoxComponent />
       <StatsComponents />
