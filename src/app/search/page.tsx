@@ -46,7 +46,6 @@ export default function Page({ searchParams }: Props): ReactElement {
           </div>
           <div className={styles.toolbar}>
             <SortComponent />
-            {/* <AppointmentFilterComponent /> */}
             <div className={styles.stats}>
               <StatsComponent />
             </div>
