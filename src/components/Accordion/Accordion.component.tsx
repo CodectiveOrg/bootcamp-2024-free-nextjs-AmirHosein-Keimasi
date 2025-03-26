@@ -3,8 +3,13 @@
 import { useState } from "react";
 import styles from "./Accordion.module.css";
 
+interface AccordionItem {
+  question: string;
+  answer: string;
+}
+
 interface AccordionProps {
-  items?: FAQItem[];
+  items?: AccordionItem[];
 }
 
 export default function Accordion({ items = [] }: AccordionProps) {
