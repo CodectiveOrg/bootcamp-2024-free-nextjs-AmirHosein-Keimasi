@@ -1,21 +1,17 @@
 "use client";
 
 import { ReactElement, useContext } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
-
 import { CarsContext } from "../../providers/cars.provider";
-
 import MingcuteUser2Fill from "@/icons/MingcuteUser2Fill";
 import MingcuteSuitcaseFill from "@/icons/MingcuteSuitcaseFill";
 import MingcuteCarWindowFill from "@/icons/MingcuteCarWindowFill";
 import MaterialSymbolsAutoTransmission from "@/icons/MaterialSymbolsAutoTransmission";
 import MingcuteSettings4Line from "@/icons/MingcuteSettings4Line";
-
-import styles from "./results.module.css";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteCheckboxFill from "@/icons/MingcuteCheckboxFill";
+import styles from "./results.module.css";
 
 interface CarInfoProps {
   doors: number;
@@ -47,15 +43,21 @@ const CarInfo = ({
 );
 
 interface BadgeProps {
-  label: string | boolean;
+  label: string | boolean | number;
 }
-const Badge = ({ label }: BadgeProps) => (
-  <div className={styles.badge}>{label}</div>
-);
+
+const Badge = ({ label }: BadgeProps) => {
+  const displayValue =
+    typeof label === "boolean" ? (label ? "بله" : "خیر") : label.toString();
+
+  return <div className={styles.badge}>{displayValue}</div>;
+};
 
 export default function ResultsComponent(): ReactElement {
   const { filteredCars } = useContext(CarsContext);
+
   const toPersianNumbers = (num: number | string): string => {
+    const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     const numStr = num.toString();
 
     if (!/\d/.test(numStr)) {
@@ -64,24 +66,33 @@ export default function ResultsComponent(): ReactElement {
 
     return numStr
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[parseInt(d)]);
+      .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
   };
+
+  if (!filteredCars?.length) {
+    return <div className={styles.noResults}>نتیجه‌ای یافت نشد</div>;
+  }
 
   return (
     <ul className={styles.results}>
       {filteredCars.map((car) => (
-        <div className={styles.card} key={car.id}>
+        <li key={car.id} className={styles.card}>
           <div className={styles.locationBadge}>
             <MingcuteLocationLine className={styles.LocIcon} />
             <Badge label={car.location} />
           </div>
-          <Image
-            src={`https://cafeerent.com/storage/www/cars/single/${car.img}`}
-            alt="Car"
-            className={styles.image}
-            width={270}
-            height={160}
-          />
+
+          <div className={styles.imageWrapper}>
+            <Image
+              src={`https://cafeerent.com/storage/www/cars/single/${car.img}`}
+              alt={`${car.name} - ${car.model}`}
+              className={styles.image}
+              width={270}
+              height={160}
+              priority={false}
+            />
+          </div>
+
           <h3 className={styles.title}>{car.name}</h3>
 
           <div className={styles.cardModel}>
@@ -101,13 +112,13 @@ export default function ResultsComponent(): ReactElement {
             <Badge label={car.with_driver} />
             <Badge label={car.features.option_type} />
           </div>
+
           <div className={styles.rental}>
             <div className={styles.minimum_rental}>
-              <span>حداقل اجاره : </span>
+              <span>حداقل اجاره: </span>
               <span className={styles.span2}>
-                {toPersianNumbers(car.rental.minimum_rental)}{" "}
+                {toPersianNumbers(car.rental.minimum_rental)} روز
               </span>
-              روز{" "}
             </div>
             <div className={styles.days_3_to_14}>
               <span>۳ تا ۱۴ روز:</span>
@@ -120,14 +131,14 @@ export default function ResultsComponent(): ReactElement {
             </div>
           </div>
 
-          <Link className={styles.detailsLink} href={""}>
-            بیشتر ... <MingcuteSettings4Line />
+          <Link className={styles.detailsLink} href={`/cars/${car.id}`}>
+            بیشتر... <MingcuteSettings4Line />
           </Link>
 
-          <Link className={styles.receiveLink} href={""}>
+          <Link className={styles.receiveLink} href={`/reserve/${car.id}`}>
             همین الان رزرو کنید <MingcuteCheckboxFill />
           </Link>
-        </div>
+        </li>
       ))}
     </ul>
   );
