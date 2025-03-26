@@ -55,11 +55,16 @@ const Badge = ({ label }: BadgeProps) => (
 
 export default function ResultsComponent(): ReactElement {
   const { filteredCars } = useContext(CarsContext);
-  const toPersianNumbers = (num: number | string) => {
-    return num
-      .toString()
+  const toPersianNumbers = (num: number | string): string => {
+    const numStr = num.toString();
+
+    if (!/\d/.test(numStr)) {
+      return numStr;
+    }
+
+    return numStr
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+      .replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[parseInt(d)]);
   };
 
   return (
