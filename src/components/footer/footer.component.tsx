@@ -15,6 +15,9 @@ export default function FooterComponent(): ReactElement {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialContainer}>
+        <div className={styles.socialText}>
+          <span>ما را در شبکه‌های اجتماعی دنبال کنید</span>
+        </div>
         <div className={styles.socialIcons}>
           <a href="#" className={styles.socialIcon}>
             <MingcuteGithubFill className={styles.icon} />
@@ -31,9 +34,6 @@ export default function FooterComponent(): ReactElement {
           <a href="#" className={styles.socialIcon}>
             <MingcuteTelegramFill className={styles.icon} />
           </a>
-        </div>
-        <div className={styles.socialText}>
-          <span>ما را در شبکه‌های اجتماعی دنبال کنید</span>
         </div>
       </div>
 
