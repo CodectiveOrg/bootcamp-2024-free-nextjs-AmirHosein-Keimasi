@@ -14,7 +14,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "کارِ مون",
+  title: "کا‌‌‌‌رِمون",
   description:
     "پلتفرمی یکپارچه برای اجاره خودرو و رزرو آنلاین ماشین در سراسر ایران",
 };
@@ -29,9 +29,7 @@ export default function RootLayout({
       <body>
         <HeaderComponent />
         <main>{children}</main>
-        <p className="tagline">
-          پلتفرمی یکپارچه برای اجاره خودرو و رزرو آنلاین ماشین در سراسر ایران{" "}
-        </p>
+
         <FooterComponent />
       </body>
     </html>

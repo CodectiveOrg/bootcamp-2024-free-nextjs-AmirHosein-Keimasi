@@ -46,7 +46,7 @@
 }
 
 .paragraph {
-  color: var(--color-text-700);
+  color: var(--color-gray-60);
   line-height: 1.75;
   margin-bottom: 1.5rem;
 }
@@ -60,7 +60,7 @@
 .list2 {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  color: var(--color-text-700);
+  color: var(--color-gray-60);
 
   li {
     margin-bottom: 0.5rem;
@@ -69,7 +69,7 @@
 
 .list li {
   margin-bottom: 0.5rem;
-  color: var(--color-text-700);
+  color: var(--color-gray-60);
 }
 
 .list li::marker {

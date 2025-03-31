@@ -1,6 +1,6 @@
 .results {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
   gap: 1rem;
   justify-content: center;
 
@@ -37,6 +37,7 @@
 
     .image {
       border-radius: var(--border-radius);
+      object-fit: contain;
     }
   }
 
@@ -53,18 +54,6 @@
     align-items: center;
     padding: 0.5rem;
     position: relative;
-
-    &.cardModel::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 7rem;
-      height: 1px;
-      background: var(--color-text-700);
-      transform: translate(-20%, -50%);
-      border-bottom: 1px dashed var(--color-text-700);
-    }
 
     .model {
       display: flex;
@@ -83,7 +72,7 @@
     margin: 0.5rem 0;
     font-size: var(--fz-400);
     flex-wrap: wrap;
-    color: var(--color-text-700);
+    color: var(--color-text-400);
   }
 
   .icon {
@@ -95,7 +84,7 @@
     color: var(--color-text-700);
   }
 
-  .badges {
+  /* .badges {
     margin-top: 0.5rem;
     display: flex;
     gap: 0.5rem;
@@ -109,7 +98,7 @@
 
       border-radius: var(--border-radius);
     }
-  }
+  } */
 
   .rental {
     display: flex;
@@ -119,19 +108,19 @@
     margin-top: 1rem;
   }
 
-  .days_3_to_14 {
+  .days_3_to_14,
+  .minimum_rental {
     display: flex;
     justify-content: space-between;
     width: 100%;
     font-size: var(--fz-400);
 
-    .redPrice {
-      color: var(--color-danger);
+    .redPrice,
+    .span2 {
+      font-weight: 600;
+      padding-left: 0.1rem;
+      color: var(--color-text-400);
     }
-  }
-
-  .span2 {
-    color: var(--color-danger);
   }
 
   .receiveLink,
@@ -151,9 +140,11 @@
 
   .detailsLink {
     background-color: var(--color-primary);
+    color: var(--color-gray-93);
   }
 
   .receiveLink {
     background-color: var(--color-danger);
+    color: var(--color-gray-93);
   }
 }

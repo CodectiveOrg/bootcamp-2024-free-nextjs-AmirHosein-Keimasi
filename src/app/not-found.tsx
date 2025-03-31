@@ -10,7 +10,7 @@ export default function NotFound(): ReactElement {
       <div className={styles["writings"]}>
         <h1>صفحه‌ی مورد نظر پیدا نشد!</h1>
         <p>
-          با عرض پوزش، صفحه مورد نظر شما در <span>کارِ مون</span> پیدا نشد،
+          با عرض پوزش، صفحه مورد نظر شما در <span>کا‌‌‌‌رِمون</span> پیدا نشد،
           لطفاً ماشین یا ویژگی مورد نظر خود را جستجو کنید.
         </p>
       </div>

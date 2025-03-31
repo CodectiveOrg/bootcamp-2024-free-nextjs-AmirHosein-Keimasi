@@ -20,7 +20,7 @@ export default function Error({ error, reset }: Props): ReactElement {
         <div className={styles["status-code"]}>مشکل پیش آمده!</div>
         <h1>یک خطای غیرمنتظره رخ داده است.</h1>
         <p>
-          با عرض پوزش، لطفاً با تیم پشتیبانی سایت <span>کارِ مون</span> تماس
+          با عرض پوزش، لطفاً با تیم پشتیبانی سایت <span>کا‌‌‌‌رِمون</span> تماس
           بگیرید.
         </p>
         <div className={styles.actions}>

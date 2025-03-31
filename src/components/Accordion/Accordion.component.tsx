@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import styles from "./Accordion.module.css";
 
 interface AccordionItem {

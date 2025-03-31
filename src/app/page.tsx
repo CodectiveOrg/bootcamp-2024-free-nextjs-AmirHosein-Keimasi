@@ -12,7 +12,7 @@ export default function Home(): ReactElement {
     <div className={styles.home}>
       <h1>
         <CarmonLogo />
-        کارِ مون{" "}
+        کا‌‌‌‌رِمون{" "}
       </h1>
       <GlobalSearchBoxComponent />
       <StatsComponents />

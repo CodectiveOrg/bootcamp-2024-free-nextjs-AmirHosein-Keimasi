@@ -1,67 +1,78 @@
 import { ReactElement } from "react";
 
-import Image from "next/image";
-import Link from "next/link";
-
-import idkLogo from "@/assets/logo/idk.svg";
-import certificateLogo from "@/assets/logo/certificate.svg";
-import enamadLogo from "@/assets/logo/enamad.svg";
-
-import MingcuteTelegramFill from "@/icons/MingcuteTelegramFill";
+import MingcuteInstagramFill from "@/icons/MingcuteInstagramFill";
+import MingcuteSocialXLine from "@/icons/MingcuteSocialXLine";
+import MingcuteGithubFill from "@/icons/MingcuteGithubFill";
 import MingcuteLinkedinFill from "@/icons/MingcuteLinkedinFill";
-import MingcuteYoutubeFill from "@/icons/MingcuteYoutubeFill";
+import MingcuteTelegramFill from "@/icons/MingcuteTelegramFill";
+import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
+import MingcuteMailFill from "@/icons/MingcuteMailFill";
+import MingcutePhoneFill from "@/icons/MingcutePhoneFill";
 
 import styles from "./footer.module.css";
 
 export default function FooterComponent(): ReactElement {
   return (
     <footer className={styles.footer}>
-      <div className={styles.writings}>
-        <div className={styles.logo}>کارِ مون</div>
-        <p className={styles.description}>
-          بهترین تجربه اجاره خودرو با شرایط آسان و قیمت‌های مناسب در سراسر ایران
-        </p>
+      <div className={styles.socialContainer}>
+        <div className={styles.socialIcons}>
+          <a href="#" className={styles.socialIcon}>
+            <MingcuteGithubFill className={styles.icon} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <MingcuteSocialXLine className={styles.icon} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <MingcuteLinkedinFill className={styles.icon} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <MingcuteInstagramFill className={styles.icon} />
+          </a>
+          <a href="#" className={styles.socialIcon}>
+            <MingcuteTelegramFill className={styles.icon} />
+          </a>
+        </div>
+        <div className={styles.socialText}>
+          <span>ما را در شبکه‌های اجتماعی دنبال کنید</span>
+        </div>
       </div>
-      <div className={styles.visuals}>
-        <ul className={styles.certificates}>
-          <li>
-            <Link href="#">
-              <Image src={idkLogo} alt="مجوز کسب و کار" />
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <Image src={certificateLogo} alt="گواهی کیفیت خدمات" />
-            </Link>
-          </li>
-          <li>
-            <Link href="#">
-              <Image src={enamadLogo} alt="نماد اعتماد الکترونیکی" />
-            </Link>
-          </li>
-        </ul>
-        <ul className={styles.socials}>
-          <li>
-            <Link href="https://telegram.im/@rentcar" target="_blank">
-              <MingcuteTelegramFill />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://www.linkedin.com/in/rentcar" target="_blank">
-              <MingcuteLinkedinFill />
-            </Link>
-          </li>
-          <li>
-            <Link href="https://youtube.com/rentcar" target="_blank">
-              <MingcuteYoutubeFill />
-            </Link>
-          </li>
-        </ul>
+
+      <div className={styles.contentContainer}>
+        <div className={styles.gridContainer}>
+          <div className={styles.gridItem}>
+            <h6 className={styles.title}>آدرس ما</h6>
+            <p className={styles.infoItem}>
+              <span className={styles.infoIcon}>
+                <MingcuteLocationLine className={styles.icon} />
+              </span>
+              تهران، خیابان آزادی، بلوار کشاورز، پلاک ۱۲۳
+            </p>
+          </div>
+
+          <div className={styles.gridItem}>
+            <h6 className={styles.title}>تماس با ما</h6>
+
+            <p className={styles.infoItem}>
+              <span className={styles.infoIcon}>
+                <MingcuteMailFill className={styles.icon} />
+              </span>
+              info@example.com
+            </p>
+            <p className={styles.infoItem}>
+              <span className={styles.infoIcon}>
+                <MingcutePhoneFill className={styles.icon} />
+              </span>
+              ۰۲۱-۱۲۳۴۵۶۷۸
+            </p>
+          </div>
+          <div className={styles.gridItem}>
+            <p className={styles.target}>
+              پلتفرمی یکپارچه برای اجاره خودرو و رزرو آنلاین ماشین در سراسر
+              ایران
+            </p>
+          </div>
+        </div>
       </div>
-      <p className={styles.copy}>
-        تمامی حقوق این وب‌سایت و خدمات آن متعلق به <span>کارِ مون</span>{" "}
-        می‌باشد.
-      </p>
     </footer>
   );
 }

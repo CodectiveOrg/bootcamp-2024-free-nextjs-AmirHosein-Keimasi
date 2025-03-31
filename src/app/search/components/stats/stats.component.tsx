@@ -8,10 +8,13 @@ import styles from "./stats.module.css";
 
 export default function StatsComponent(): ReactElement {
   const { filteredCars } = useContext(CarsContext);
-
+  const persianNumber = new Intl.NumberFormat("fa-IR").format(
+    filteredCars.length,
+  );
   return (
     <div className={styles.stats}>
-      {filteredCars.length.toLocaleString()} نتیجه
+      {persianNumber}
+      <span>نتیجه</span>
     </div>
   );
 }

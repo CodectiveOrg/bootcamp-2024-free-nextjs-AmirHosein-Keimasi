@@ -1,15 +1,18 @@
 "use client";
 
 import { ReactElement, useContext } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 import { CarsContext } from "../../providers/cars.provider";
+
 import MingcuteUser2Fill from "@/icons/MingcuteUser2Fill";
 import MingcuteSuitcaseFill from "@/icons/MingcuteSuitcaseFill";
 import MingcuteCarWindowFill from "@/icons/MingcuteCarWindowFill";
 import MaterialSymbolsAutoTransmission from "@/icons/MaterialSymbolsAutoTransmission";
 import MingcuteSettings4Line from "@/icons/MingcuteSettings4Line";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
+
 import MingcuteCheckboxFill from "@/icons/MingcuteCheckboxFill";
 import styles from "./results.module.css";
 
@@ -19,7 +22,18 @@ interface CarInfoProps {
   luggage: number;
   transmission: string;
 }
+const toPersianNumbers = (num: number | string): string => {
+  const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  const numStr = num.toString();
 
+  if (!/\d/.test(numStr)) {
+    return numStr;
+  }
+
+  return numStr
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
+};
 const CarInfo = ({
   doors,
   passengers,
@@ -28,16 +42,20 @@ const CarInfo = ({
 }: CarInfoProps) => (
   <div className={styles.info}>
     <span>
-      <MingcuteCarWindowFill className={styles.icon} /> {doors}
+      <MingcuteCarWindowFill className={styles.icon} />{" "}
+      {toPersianNumbers(doors)}
     </span>
     <span>
-      <MingcuteUser2Fill className={styles.icon} /> {passengers}
+      <MingcuteUser2Fill className={styles.icon} />{" "}
+      {toPersianNumbers(passengers)}
     </span>
     <span>
-      <MingcuteSuitcaseFill className={styles.icon} /> {luggage}
+      <MingcuteSuitcaseFill className={styles.icon} />{" "}
+      {toPersianNumbers(luggage)}
     </span>
     <span>
-      <MaterialSymbolsAutoTransmission className={styles.icon} /> {transmission}
+      <MaterialSymbolsAutoTransmission className={styles.icon} />{" "}
+      {toPersianNumbers(transmission)}
     </span>
   </div>
 );
@@ -55,19 +73,6 @@ const Badge = ({ label }: BadgeProps) => {
 
 export default function ResultsComponent(): ReactElement {
   const { filteredCars } = useContext(CarsContext);
-
-  const toPersianNumbers = (num: number | string): string => {
-    const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    const numStr = num.toString();
-
-    if (!/\d/.test(numStr)) {
-      return numStr;
-    }
-
-    return numStr
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
-  };
 
   if (!filteredCars?.length) {
     return <div className={styles.noResults}>نتیجه‌ای یافت نشد</div>;
@@ -93,10 +98,8 @@ export default function ResultsComponent(): ReactElement {
             />
           </div>
 
-          <h3 className={styles.title}>{car.name}</h3>
-
           <div className={styles.cardModel}>
-            <p>مدل</p>
+            <h3 className={styles.title}>{car.name}</h3>
             <p className={styles.model}>{car.model}</p>
           </div>
 
@@ -107,17 +110,20 @@ export default function ResultsComponent(): ReactElement {
             transmission={car.features.transmission}
           />
 
-          <div className={styles.badges}>
+          {/* <div className={styles.badges}>
             <Badge label={car.engine.type} />
             <Badge label={car.with_driver} />
             <Badge label={car.features.option_type} />
-          </div>
+          </div> */}
 
           <div className={styles.rental}>
             <div className={styles.minimum_rental}>
-              <span>حداقل اجاره: </span>
-              <span className={styles.span2}>
-                {toPersianNumbers(car.rental.minimum_rental)} روز
+              <span>حداقل اجاره: </span>{" "}
+              <span>
+                <span className={styles.span2}>
+                  {toPersianNumbers(car.rental.minimum_rental)}
+                </span>
+                روز{" "}
               </span>
             </div>
             <div className={styles.days_3_to_14}>

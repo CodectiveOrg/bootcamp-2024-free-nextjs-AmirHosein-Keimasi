@@ -12,28 +12,25 @@
   --color-gray-12: hsl(200deg 10% 12%);
   --color-gray-10: hsl(200deg 10% 10%);
 
-  --color-primary: hsl(200deg 90% 46%);
+  --color-primary: hsl(200deg 86% 25.46%);
   --color-primary-fade: hsl(200deg 90% 96%);
   --color-primary-lighter: hsl(200deg 90% 50%);
-  --color-primary-darker: hsl(200, 83%, 28%);
+  --color-primary-darkeMod: hsl(200deg 100% 56.21%);
   --color-primary-opposite: var(--color-gray-99);
 
-  --color-danger: hsl(10deg 80% 48%);
-  --color-danger-fade: hsl(10deg 80% 96%);
-  --color-danger-lighter: hsl(10deg 80% 52%);
-  --color-danger-darker: hsl(10deg 80% 44%);
-  --color-danger-opposite: var(--color-gray-99);
+  --color-danger: hsl(10, 86%, 37%);
 
   --color-star: hsl(50deg 100% 50%);
   --color-border: var(--color-gray-80);
 
   --shadow-300: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-400: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-500: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-700: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-800: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-500:
+    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-700:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-800:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-900: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   --border-radius: 0.75rem;
@@ -47,11 +44,12 @@
 
 html[data-theme="dark"],
 html:not([data-theme]) {
-  --color-surface-300: var(--color-gray-20);
+  --color-surface-300: var(--color-gray-12);
   --color-surface-400: var(--color-gray-16);
-  --color-surface-700: var(--color-gray-12);
-  --color-text-400: var(--color-gray-99);
-  --color-text-700: var(--color-gray-80);
+  --color-surface-700: var(--color-gray-20);
+  --color-text-400: var(--color-gray-93);
+  --color-text-700: var(--color-gray-97);
+  --color-primary: var(--color-primary-darkeMod);
 }
 
 html[data-theme="light"] {
@@ -59,12 +57,7 @@ html[data-theme="light"] {
   --color-surface-400: var(--color-gray-97);
   --color-surface-700: var(--color-gray-99);
   --color-text-400: var(--color-gray-10);
-  --color-text-700: var(--color-gray-40);
-  --color-default-background: hsl(225, 100%, 99%);
-  --color-default-foreground: hsl(220, 30%, 20%);
-  --color-primary: hsl(30, 100%, 55%);
-  --color-primary-fade: hsl(0, 0%, 93%);
-  --color-accent: hsl(47, 60%, 40%);
+  --color-text-700: var(--color-gray-50);
 }
 
 *,
@@ -109,21 +102,17 @@ a {
 }
 
 body {
-  background-color: var(--color-surface-400);
+  background-color: var(--color-surface-300);
   color: var(--color-text-400);
   display: grid;
   grid-template-rows: auto 1fr auto auto;
   min-block-size: 100vh;
   min-block-size: 100dvh;
   font-size: var(--fz-400);
+  transition: all var(--animation-duration-normal)
+    cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
   > * {
     padding-inline: var(--full-width-padding-inline);
-  }
-
-  .tagline {
-    background-color: var(--color-surface-300);
-    padding-block: 1rem;
-    text-align: center;
   }
 }
