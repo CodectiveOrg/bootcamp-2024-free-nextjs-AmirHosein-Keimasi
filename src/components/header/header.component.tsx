@@ -14,6 +14,8 @@ import styles from "./header.module.css";
 const links = [
   { href: "/", title: "خانه" },
   { href: "/search", title: "جستجو" },
+  { href: "/questions", title: "سوالات متداول" },
+  { href: "/Rules", title: "شرایط و قوانین" },
 ];
 
 export default function HeaderComponent(): ReactElement {

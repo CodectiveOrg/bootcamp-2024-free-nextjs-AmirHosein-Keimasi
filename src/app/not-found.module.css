@@ -4,7 +4,7 @@
     "writings visuals"
     "search search";
   place-content: center;
-  gap: 3rem;
+  gap: 1.5rem;
   min-block-size: 100%;
 
   .writings {
@@ -26,6 +26,7 @@
     p {
       max-inline-size: 50ch;
     }
+
     span {
       font-size: var(--fz-500);
       margin: 0.25rem;
@@ -41,9 +42,9 @@
 
     img {
       block-size: 100%;
-      max-width: 100%;
+      max-width: 80%;
       height: auto;
-      max-height: 200px;
+      max-height: 250px;
     }
   }
 

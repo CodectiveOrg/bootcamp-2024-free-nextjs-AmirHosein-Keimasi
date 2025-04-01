@@ -17,9 +17,12 @@ export default function Error({ error, reset }: Props): ReactElement {
   return (
     <div className={styles["error"]}>
       <div className={styles.writings}>
-        <div className={styles["status-code"]}>بدبخت شدیم!</div>
+        <div className={styles["status-code"]}>مشکل پیش آمده!</div>
         <h1>یک خطای غیرمنتظره رخ داده است.</h1>
-        <p>با عرض پوزش، لطفاً با تیم پشتیبانی تماس بگیرید.</p>
+        <p>
+          با عرض پوزش، لطفاً با تیم پشتیبانی سایت <span>کا‌‌‌‌رِمون</span> تماس
+          بگیرید.
+        </p>
         <div className={styles.actions}>
           <button onClick={reset}>تلاش مجدد</button>
         </div>

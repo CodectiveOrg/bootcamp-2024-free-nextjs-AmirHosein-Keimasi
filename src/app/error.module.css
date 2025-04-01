@@ -25,6 +25,7 @@
 
   .visuals {
     grid-area: visuals;
+    object-fit: contain;
   }
 
   .actions {

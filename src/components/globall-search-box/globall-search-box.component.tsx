@@ -13,7 +13,7 @@ export default function GlobalSearchBoxComponent(): ReactElement {
       </div>
       <input
         type="text"
-        placeholder="نام بیماری، تخصص، پزشک، بیمارستان و ..."
+        placeholder="نوع خودرو ، محل تحویل ، استان و شهرستان و ..."
       />
       <div className={styles.divider}></div>
       <div className={styles.suffix}>
