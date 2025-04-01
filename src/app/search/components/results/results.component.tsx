@@ -4,61 +4,29 @@ import { ReactElement, useContext } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
+
 import { CarsContext } from "../../providers/cars.provider";
 
-import MingcuteUser2Fill from "@/icons/MingcuteUser2Fill";
-import MingcuteSuitcaseFill from "@/icons/MingcuteSuitcaseFill";
-import MingcuteCarWindowFill from "@/icons/MingcuteCarWindowFill";
-import MaterialSymbolsAutoTransmission from "@/icons/MaterialSymbolsAutoTransmission";
+import CarInfo from "@/components/car-info/car-info.component";
+
 import MingcuteSettings4Line from "@/icons/MingcuteSettings4Line";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
-
 import MingcuteCheckboxFill from "@/icons/MingcuteCheckboxFill";
+
 import styles from "./results.module.css";
 
-interface CarInfoProps {
-  doors: number;
-  passengers: number;
-  luggage: number;
-  transmission: string;
-}
+
 const toPersianNumbers = (num: number | string): string => {
   const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
   const numStr = num.toString();
-
   if (!/\d/.test(numStr)) {
     return numStr;
   }
-
   return numStr
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
 };
-const CarInfo = ({
-  doors,
-  passengers,
-  luggage,
-  transmission,
-}: CarInfoProps) => (
-  <div className={styles.info}>
-    <span>
-      <MingcuteCarWindowFill className={styles.icon} />{" "}
-      {toPersianNumbers(doors)}
-    </span>
-    <span>
-      <MingcuteUser2Fill className={styles.icon} />{" "}
-      {toPersianNumbers(passengers)}
-    </span>
-    <span>
-      <MingcuteSuitcaseFill className={styles.icon} />{" "}
-      {toPersianNumbers(luggage)}
-    </span>
-    <span>
-      <MaterialSymbolsAutoTransmission className={styles.icon} />{" "}
-      {toPersianNumbers(transmission)}
-    </span>
-  </div>
-);
+
 
 interface BadgeProps {
   label: string | boolean | number;
@@ -67,7 +35,6 @@ interface BadgeProps {
 const Badge = ({ label }: BadgeProps) => {
   const displayValue =
     typeof label === "boolean" ? (label ? "بله" : "خیر") : label.toString();
-
   return <div className={styles.badge}>{displayValue}</div>;
 };
 
@@ -102,14 +69,13 @@ export default function ResultsComponent(): ReactElement {
             <h3 className={styles.title}>{car.name}</h3>
             <p className={styles.model}>{car.model}</p>
           </div>
-
+          
           <CarInfo
             doors={car.capacity.door}
             passengers={car.capacity.passengers}
             luggage={car.capacity.luggage}
             transmission={car.features.transmission}
           />
-
           {/* <div className={styles.badges}>
             <Badge label={car.engine.type} />
             <Badge label={car.with_driver} />

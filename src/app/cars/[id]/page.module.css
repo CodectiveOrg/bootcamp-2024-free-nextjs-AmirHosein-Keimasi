@@ -1,0 +1,25 @@
+.page {
+    display: grid;
+    grid-template-areas: "Price"  "info ";
+    grid-template-columns: 2fr;
+    grid-template-rows: auto auto 1fr;
+    align-items: start;
+
+    .Price {
+        grid-area: Price;
+        background-color: red;
+    }
+
+    .info {
+        grid-area: info;
+
+        display: grid;
+        gap: 1rem;
+
+        .image {
+            object-fit: contain;
+        }
+    }
+
+
+}
