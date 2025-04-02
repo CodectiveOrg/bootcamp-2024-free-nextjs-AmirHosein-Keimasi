@@ -4,7 +4,14 @@ import { notFound } from "next/navigation";
 import { cars } from "@/db/cars";
 
 import styles from "./page.module.css";
-import Image from "next/image";
+
+import CarInfo from "./components/car-info/car-info.component";
+import PriceCar from "./components/price-car/price-car.component";
+import LocationCar from "./components/location-car/location-car.component";
+import Features from "./components/features/features.component";
+import DriverPriceCar from "./components/price-car-with-driver/price-car-with-driver.component";
+import SpecsAndFeatures from "./components/car-details/car-details.component";
+import Peugeot206RentalInfo from "./components/Rental-Info/Peugeot206RentalInfo";
 
 type Props = {
   params: { id: string };
@@ -12,29 +19,34 @@ type Props = {
 
 export default function Page({ params }: Props): ReactElement {
   const car = cars.find((x) => x.id === params.id);
+
   if (!car) {
     return notFound();
   }
+
   return (
-    <>
-      <div className={styles.page}>
-        <div className={styles.Price}> </div>
-        <div className={styles.info}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src={`https://cafeerent.com/storage/www/cars/single/${car.img}`}
-              alt={`${car.name} - ${car.model}`}
-              className={styles.image}
-              width={500}
-              height={350}
-              priority={false}
-            />
-            <div className={styles.name}>{car.name}</div>
-            <div className={styles.model}>{car.model}</div>
-            <div className={styles.model}>{car.features.chassis_type}</div>
-          </div>{" "}
-        </div>
+    <div className={styles.page}>
+      <div className={styles.carInfo}>
+        <CarInfo car={car} />
       </div>
-    </>
+
+      <div className={styles.Prices}>
+        <PriceCar car={car} />
+        <DriverPriceCar car={car} />
+      </div>
+
+      <div className={styles.locationCar}>
+        <LocationCar car={car} />
+        <Features features={car.features} />
+      </div>
+
+      <div className={styles.SpecsAndFeatures}>
+        <SpecsAndFeatures car={car} />
+      </div>
+
+      <div className={styles.rentalInfo}>
+        <Peugeot206RentalInfo car={car} />
+      </div>
+    </div>
   );
 }

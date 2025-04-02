@@ -1,7 +1,7 @@
 import React from "react";
 import "./loading.module.css";
 
-const CarLoader: React.FC = () => {
+const Loading: React.FC = () => {
   return (
     <div className="loader">
       <svg
@@ -62,4 +62,4 @@ const CarLoader: React.FC = () => {
   );
 };
 
-export default CarLoader;
+export default Loading;

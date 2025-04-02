@@ -5,7 +5,7 @@ import MingcuteSuitcaseFill from "@/icons/MingcuteSuitcaseFill";
 import MingcuteCarWindowFill from "@/icons/MingcuteCarWindowFill";
 import MaterialSymbolsAutoTransmission from "@/icons/MaterialSymbolsAutoTransmission";
 
-import styles from "./car-info.module.css";
+import styles from "./car-infoIcon.module.css";
 
 interface CarInfoProps {
   doors: number;
@@ -27,21 +27,30 @@ const toPersianNumbers = (num: number | string): string => {
     .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
 };
 
-const CarInfo: React.FC<CarInfoProps> = ({ doors, passengers, luggage, transmission }) => (
+const CarInfoIcon: React.FC<CarInfoProps> = ({
+  doors,
+  passengers,
+  luggage,
+  transmission,
+}) => (
   <div className={styles.info}>
     <span>
-      <MingcuteCarWindowFill className={styles.icon} /> {toPersianNumbers(doors)}
+      <MingcuteCarWindowFill className={styles.icon} />{" "}
+      {toPersianNumbers(doors)}
     </span>
     <span>
-      <MingcuteUser2Fill className={styles.icon} /> {toPersianNumbers(passengers)}
+      <MingcuteUser2Fill className={styles.icon} />{" "}
+      {toPersianNumbers(passengers)}
     </span>
     <span>
-      <MingcuteSuitcaseFill className={styles.icon} /> {toPersianNumbers(luggage)}
+      <MingcuteSuitcaseFill className={styles.icon} />{" "}
+      {toPersianNumbers(luggage)}
     </span>
     <span>
-      <MaterialSymbolsAutoTransmission className={styles.icon} /> {toPersianNumbers(transmission)}
+      <MaterialSymbolsAutoTransmission className={styles.icon} />{" "}
+      {toPersianNumbers(transmission)}
     </span>
   </div>
 );
 
-export default CarInfo;
+export default CarInfoIcon;

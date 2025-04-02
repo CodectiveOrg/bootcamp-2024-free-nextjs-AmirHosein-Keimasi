@@ -1,25 +1,41 @@
 .page {
-    display: grid;
-    grid-template-areas: "Price"  "info ";
-    grid-template-columns: 2fr;
-    grid-template-rows: auto auto 1fr;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-areas:
+    "carInfo Prices "
+    "locationCar SpecsAndFeatures"
+    "rentalInfo rentalInfo";
+  gap: 1rem;
+  align-items: stretch;
+}
 
-    .Price {
-        grid-area: Price;
-        background-color: red;
-    }
+.carInfo {
+  grid-area: carInfo;
+}
 
-    .info {
-        grid-area: info;
+.Prices {
+  grid-area: Prices;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
 
-        display: grid;
-        gap: 1rem;
+.locationCar {
+  grid-area: locationCar;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-        .image {
-            object-fit: contain;
-        }
-    }
+.SpecsAndFeatures {
+  grid-area: SpecsAndFeatures;
+}
 
+.rentalInfo {
+  grid-area: rentalInfo;
+}
 
+.locationCar,
+.SpecsAndFeatures {
+  min-height: 100%;
 }

@@ -7,14 +7,13 @@ import Image from "next/image";
 
 import { CarsContext } from "../../providers/cars.provider";
 
-import CarInfo from "@/components/car-info/car-info.component";
+import CarInfoIcon from "@/components/car-info/car-infoIcon.component";
 
 import MingcuteSettings4Line from "@/icons/MingcuteSettings4Line";
 import MingcuteLocationLine from "@/icons/MingcuteLocationLine";
 import MingcuteCheckboxFill from "@/icons/MingcuteCheckboxFill";
 
 import styles from "./results.module.css";
-
 
 const toPersianNumbers = (num: number | string): string => {
   const persianDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
@@ -26,7 +25,6 @@ const toPersianNumbers = (num: number | string): string => {
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     .replace(/\d/g, (d) => persianDigits[parseInt(d, 10)]);
 };
-
 
 interface BadgeProps {
   label: string | boolean | number;
@@ -69,18 +67,13 @@ export default function ResultsComponent(): ReactElement {
             <h3 className={styles.title}>{car.name}</h3>
             <p className={styles.model}>{car.model}</p>
           </div>
-          
-          <CarInfo
+
+          <CarInfoIcon
             doors={car.capacity.door}
             passengers={car.capacity.passengers}
             luggage={car.capacity.luggage}
             transmission={car.features.transmission}
           />
-          {/* <div className={styles.badges}>
-            <Badge label={car.engine.type} />
-            <Badge label={car.with_driver} />
-            <Badge label={car.features.option_type} />
-          </div> */}
 
           <div className={styles.rental}>
             <div className={styles.minimum_rental}>
